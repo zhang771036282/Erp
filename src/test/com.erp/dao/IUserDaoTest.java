@@ -14,12 +14,12 @@ public class IUserDaoTest {
 
     @Autowired
     @SuppressWarnings("SpringJavaAutowiringInspection")
-    private IUserDao dao;
+    private IUserDao IUserDao;
 
     @Test
     public void testSelectUser() throws Exception {
         long id = 1;
-        User user = dao.selectUser(id);
+        User user = IUserDao.selectUser(id);
         System.out.println(user.getUsername());
     }
 }

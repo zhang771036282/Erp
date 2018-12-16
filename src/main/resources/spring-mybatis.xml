@@ -81,6 +81,12 @@
             <tx:method name="update*"/>
             <!--以save开始的所有方法  -->
             <tx:method name="save*"/>
+            <!--以insert开始的所有方法  -->
+            <tx:method name="insert*"/>
+            <!--以find开始的所有方法  -->
+            <tx:method name="find*"/>
+            <!--以select开始的所有方法  -->
+            <tx:method name="select*"/>
         </tx:attributes>
     </tx:advice>
 

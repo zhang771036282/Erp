@@ -16,8 +16,6 @@
     <!-- 开启SpringMVC注解模式 -->
     <mvc:annotation-driven/>
 
-    <!-- 静态资源默认servlet配置 -->
-    <mvc:default-servlet-handler/>
 
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
     <bean id="MappingJackson2HttpMessageConverter"
@@ -54,7 +52,7 @@
 
     <!-- 加载静态资源 -->
 
-    <mvc:resources location="/frame/" mapping="/frame/**" />
+    <mvc:resources location="/static/" mapping="/static/**" />
 
 
     <!-- 配置jsp 显示ViewResolver -->

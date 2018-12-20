@@ -23,37 +23,26 @@
     <!-- 将spring mvc不能处理的请求交给tomcat -->
     <mvc:default-servlet-handler/>
     <!-- 能支持springmvc更高级的一些功能 ，例如JSR303校验，快捷的ajax请求，映射动态请求等 -->
-    <mvc:annotation-driven ignore-default-model-on-redirect="true">
-        <mvc:message-converters register-defaults="false">
-            <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
-            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
-                <property name="supportedMediaTypes" value="text/plain;charset=UTF-8"/>
-            </bean>
-            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-                <property name="supportedMediaTypes">
-                    <list>
-                        <value>text/plain;charset=UTF-8</value>
-                        <value>text/html;charset=UTF-8</value>
-                    </list>
-                </property>
-                <property name="objectMapper">
-                    <bean class="com.fasterxml.jackson.databind.ObjectMapper">
-                        <!-- 处理responseBody 里面日期类型 -->
-                        <property name="dateFormat">
-                            <bean class="java.text.SimpleDateFormat">
-                                <constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss"/>
-                            </bean>
-                        </property>
-                        <!-- 为null字段时不显示 -->
-                        <!--<property name="serializationInclusion">
-                            <value type="com.fasterxml.jackson.annotation.JsonInclude.Include">NON_NULL</value>
-                        </property>-->
-                    </bean>
-                </property>
-            </bean>
-        </mvc:message-converters>
-    </mvc:annotation-driven>
+    <mvc:annotation-driven/>
 
+    <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
+    <bean id="MappingJackson2HttpMessageConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/html;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+    <!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射 -->
+    <bean
+            class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="MappingJackson2HttpMessageConverter"/>    <!-- JSON转换器 -->
+            </list>
+        </property>
+    </bean>
     <!-- 视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>

@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.erp.dao.ProductDetailsMapper" >
+  <resultMap id="BaseResultMap" type="com.erp.pojo.ProductDetails" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="ddid" property="ddid" jdbcType="INTEGER" />
+    <result column="product_id" property="productId" jdbcType="INTEGER" />
+    <result column="bar_code" property="barCode" jdbcType="VARCHAR" />
+    <result column="order_code" property="orderCode" jdbcType="VARCHAR" />
+    <result column="package_number" property="packageNumber" jdbcType="INTEGER" />
+    <result column="width" property="width" jdbcType="REAL" />
+    <result column="height" property="height" jdbcType="REAL" />
+    <result column="board" property="board" jdbcType="VARCHAR" />
+    <result column="craft" property="craft" jdbcType="VARCHAR" />
+    <result column="door_type" property="doorType" jdbcType="VARCHAR" />
+    <result column="edge_shape" property="edgeShape" jdbcType="VARCHAR" />
+    <result column="door_type_parts" property="doorTypeParts" jdbcType="VARCHAR" />
+    <result column="door_type_parts_num" property="doorTypePartsNum" jdbcType="INTEGER" />
+    <result column="face" property="face" jdbcType="VARCHAR" />
+    <result column="parts" property="parts" jdbcType="VARCHAR" />
+    <result column="parts_number" property="partsNumber" jdbcType="INTEGER" />
+    <result column="texture" property="texture" jdbcType="VARCHAR" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+    <result column="product_color" property="productColor" jdbcType="VARCHAR" />
+    <result column="open" property="open" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="v1" property="v1" jdbcType="REAL" />
+    <result column="v2" property="v2" jdbcType="REAL" />
+    <result column="v3" property="v3" jdbcType="REAL" />
+    <result column="next_step" property="nextStep" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="VARCHAR" />
+    <result column="door_type_name" property="doorTypeName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, ddid, product_id, bar_code, order_code, package_number, width, height, board, 
+    craft, door_type, edge_shape, door_type_parts, door_type_parts_num, face, parts, 
+    parts_number, texture, num, product_color, open, remark, v1, v2, v3, next_step, state, 
+    door_type_name
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.erp.pojo.ProductDetailsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from product_details
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from product_details
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from product_details
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.erp.pojo.ProductDetailsExample" >
+    delete from product_details
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.erp.pojo.ProductDetails" >
+    insert into product_details (id, ddid, product_id, 
+      bar_code, order_code, package_number, 
+      width, height, board, craft, 
+      door_type, edge_shape, door_type_parts, 
+      door_type_parts_num, face, parts, 
+      parts_number, texture, num, 
+      product_color, open, remark, 
+      v1, v2, v3, next_step, 
+      state, door_type_name)
+    values (#{id,jdbcType=INTEGER}, #{ddid,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, 
+      #{barCode,jdbcType=VARCHAR}, #{orderCode,jdbcType=VARCHAR}, #{packageNumber,jdbcType=INTEGER}, 
+      #{width,jdbcType=REAL}, #{height,jdbcType=REAL}, #{board,jdbcType=VARCHAR}, #{craft,jdbcType=VARCHAR}, 
+      #{doorType,jdbcType=VARCHAR}, #{edgeShape,jdbcType=VARCHAR}, #{doorTypeParts,jdbcType=VARCHAR}, 
+      #{doorTypePartsNum,jdbcType=INTEGER}, #{face,jdbcType=VARCHAR}, #{parts,jdbcType=VARCHAR}, 
+      #{partsNumber,jdbcType=INTEGER}, #{texture,jdbcType=VARCHAR}, #{num,jdbcType=INTEGER}, 
+      #{productColor,jdbcType=VARCHAR}, #{open,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{v1,jdbcType=REAL}, #{v2,jdbcType=REAL}, #{v3,jdbcType=REAL}, #{nextStep,jdbcType=VARCHAR}, 
+      #{state,jdbcType=VARCHAR}, #{doorTypeName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.erp.pojo.ProductDetails" >
+    insert into product_details
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="ddid != null" >
+        ddid,
+      </if>
+      <if test="productId != null" >
+        product_id,
+      </if>
+      <if test="barCode != null" >
+        bar_code,
+      </if>
+      <if test="orderCode != null" >
+        order_code,
+      </if>
+      <if test="packageNumber != null" >
+        package_number,
+      </if>
+      <if test="width != null" >
+        width,
+      </if>
+      <if test="height != null" >
+        height,
+      </if>
+      <if test="board != null" >
+        board,
+      </if>
+      <if test="craft != null" >
+        craft,
+      </if>
+      <if test="doorType != null" >
+        door_type,
+      </if>
+      <if test="edgeShape != null" >
+        edge_shape,
+      </if>
+      <if test="doorTypeParts != null" >
+        door_type_parts,
+      </if>
+      <if test="doorTypePartsNum != null" >
+        door_type_parts_num,
+      </if>
+      <if test="face != null" >
+        face,
+      </if>
+      <if test="parts != null" >
+        parts,
+      </if>
+      <if test="partsNumber != null" >
+        parts_number,
+      </if>
+      <if test="texture != null" >
+        texture,
+      </if>
+      <if test="num != null" >
+        num,
+      </if>
+      <if test="productColor != null" >
+        product_color,
+      </if>
+      <if test="open != null" >
+        open,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="v1 != null" >
+        v1,
+      </if>
+      <if test="v2 != null" >
+        v2,
+      </if>
+      <if test="v3 != null" >
+        v3,
+      </if>
+      <if test="nextStep != null" >
+        next_step,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="doorTypeName != null" >
+        door_type_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="ddid != null" >
+        #{ddid,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null" >
+        #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="barCode != null" >
+        #{barCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCode != null" >
+        #{orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="packageNumber != null" >
+        #{packageNumber,jdbcType=INTEGER},
+      </if>
+      <if test="width != null" >
+        #{width,jdbcType=REAL},
+      </if>
+      <if test="height != null" >
+        #{height,jdbcType=REAL},
+      </if>
+      <if test="board != null" >
+        #{board,jdbcType=VARCHAR},
+      </if>
+      <if test="craft != null" >
+        #{craft,jdbcType=VARCHAR},
+      </if>
+      <if test="doorType != null" >
+        #{doorType,jdbcType=VARCHAR},
+      </if>
+      <if test="edgeShape != null" >
+        #{edgeShape,jdbcType=VARCHAR},
+      </if>
+      <if test="doorTypeParts != null" >
+        #{doorTypeParts,jdbcType=VARCHAR},
+      </if>
+      <if test="doorTypePartsNum != null" >
+        #{doorTypePartsNum,jdbcType=INTEGER},
+      </if>
+      <if test="face != null" >
+        #{face,jdbcType=VARCHAR},
+      </if>
+      <if test="parts != null" >
+        #{parts,jdbcType=VARCHAR},
+      </if>
+      <if test="partsNumber != null" >
+        #{partsNumber,jdbcType=INTEGER},
+      </if>
+      <if test="texture != null" >
+        #{texture,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null" >
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="productColor != null" >
+        #{productColor,jdbcType=VARCHAR},
+      </if>
+      <if test="open != null" >
+        #{open,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="v1 != null" >
+        #{v1,jdbcType=REAL},
+      </if>
+      <if test="v2 != null" >
+        #{v2,jdbcType=REAL},
+      </if>
+      <if test="v3 != null" >
+        #{v3,jdbcType=REAL},
+      </if>
+      <if test="nextStep != null" >
+        #{nextStep,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="doorTypeName != null" >
+        #{doorTypeName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.erp.pojo.ProductDetailsExample" resultType="java.lang.Integer" >
+    select count(*) from product_details
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update product_details
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.ddid != null" >
+        ddid = #{record.ddid,jdbcType=INTEGER},
+      </if>
+      <if test="record.productId != null" >
+        product_id = #{record.productId,jdbcType=INTEGER},
+      </if>
+      <if test="record.barCode != null" >
+        bar_code = #{record.barCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderCode != null" >
+        order_code = #{record.orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.packageNumber != null" >
+        package_number = #{record.packageNumber,jdbcType=INTEGER},
+      </if>
+      <if test="record.width != null" >
+        width = #{record.width,jdbcType=REAL},
+      </if>
+      <if test="record.height != null" >
+        height = #{record.height,jdbcType=REAL},
+      </if>
+      <if test="record.board != null" >
+        board = #{record.board,jdbcType=VARCHAR},
+      </if>
+      <if test="record.craft != null" >
+        craft = #{record.craft,jdbcType=VARCHAR},
+      </if>
+      <if test="record.doorType != null" >
+        door_type = #{record.doorType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.edgeShape != null" >
+        edge_shape = #{record.edgeShape,jdbcType=VARCHAR},
+      </if>
+      <if test="record.doorTypeParts != null" >
+        door_type_parts = #{record.doorTypeParts,jdbcType=VARCHAR},
+      </if>
+      <if test="record.doorTypePartsNum != null" >
+        door_type_parts_num = #{record.doorTypePartsNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.face != null" >
+        face = #{record.face,jdbcType=VARCHAR},
+      </if>
+      <if test="record.parts != null" >
+        parts = #{record.parts,jdbcType=VARCHAR},
+      </if>
+      <if test="record.partsNumber != null" >
+        parts_number = #{record.partsNumber,jdbcType=INTEGER},
+      </if>
+      <if test="record.texture != null" >
+        texture = #{record.texture,jdbcType=VARCHAR},
+      </if>
+      <if test="record.num != null" >
+        num = #{record.num,jdbcType=INTEGER},
+      </if>
+      <if test="record.productColor != null" >
+        product_color = #{record.productColor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.open != null" >
+        open = #{record.open,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.v1 != null" >
+        v1 = #{record.v1,jdbcType=REAL},
+      </if>
+      <if test="record.v2 != null" >
+        v2 = #{record.v2,jdbcType=REAL},
+      </if>
+      <if test="record.v3 != null" >
+        v3 = #{record.v3,jdbcType=REAL},
+      </if>
+      <if test="record.nextStep != null" >
+        next_step = #{record.nextStep,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null" >
+        state = #{record.state,jdbcType=VARCHAR},
+      </if>
+      <if test="record.doorTypeName != null" >
+        door_type_name = #{record.doorTypeName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update product_details
+    set id = #{record.id,jdbcType=INTEGER},
+      ddid = #{record.ddid,jdbcType=INTEGER},
+      product_id = #{record.productId,jdbcType=INTEGER},
+      bar_code = #{record.barCode,jdbcType=VARCHAR},
+      order_code = #{record.orderCode,jdbcType=VARCHAR},
+      package_number = #{record.packageNumber,jdbcType=INTEGER},
+      width = #{record.width,jdbcType=REAL},
+      height = #{record.height,jdbcType=REAL},
+      board = #{record.board,jdbcType=VARCHAR},
+      craft = #{record.craft,jdbcType=VARCHAR},
+      door_type = #{record.doorType,jdbcType=VARCHAR},
+      edge_shape = #{record.edgeShape,jdbcType=VARCHAR},
+      door_type_parts = #{record.doorTypeParts,jdbcType=VARCHAR},
+      door_type_parts_num = #{record.doorTypePartsNum,jdbcType=INTEGER},
+      face = #{record.face,jdbcType=VARCHAR},
+      parts = #{record.parts,jdbcType=VARCHAR},
+      parts_number = #{record.partsNumber,jdbcType=INTEGER},
+      texture = #{record.texture,jdbcType=VARCHAR},
+      num = #{record.num,jdbcType=INTEGER},
+      product_color = #{record.productColor,jdbcType=VARCHAR},
+      open = #{record.open,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      v1 = #{record.v1,jdbcType=REAL},
+      v2 = #{record.v2,jdbcType=REAL},
+      v3 = #{record.v3,jdbcType=REAL},
+      next_step = #{record.nextStep,jdbcType=VARCHAR},
+      state = #{record.state,jdbcType=VARCHAR},
+      door_type_name = #{record.doorTypeName,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.erp.pojo.ProductDetails" >
+    update product_details
+    <set >
+      <if test="ddid != null" >
+        ddid = #{ddid,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null" >
+        product_id = #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="barCode != null" >
+        bar_code = #{barCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderCode != null" >
+        order_code = #{orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="packageNumber != null" >
+        package_number = #{packageNumber,jdbcType=INTEGER},
+      </if>
+      <if test="width != null" >
+        width = #{width,jdbcType=REAL},
+      </if>
+      <if test="height != null" >
+        height = #{height,jdbcType=REAL},
+      </if>
+      <if test="board != null" >
+        board = #{board,jdbcType=VARCHAR},
+      </if>
+      <if test="craft != null" >
+        craft = #{craft,jdbcType=VARCHAR},
+      </if>
+      <if test="doorType != null" >
+        door_type = #{doorType,jdbcType=VARCHAR},
+      </if>
+      <if test="edgeShape != null" >
+        edge_shape = #{edgeShape,jdbcType=VARCHAR},
+      </if>
+      <if test="doorTypeParts != null" >
+        door_type_parts = #{doorTypeParts,jdbcType=VARCHAR},
+      </if>
+      <if test="doorTypePartsNum != null" >
+        door_type_parts_num = #{doorTypePartsNum,jdbcType=INTEGER},
+      </if>
+      <if test="face != null" >
+        face = #{face,jdbcType=VARCHAR},
+      </if>
+      <if test="parts != null" >
+        parts = #{parts,jdbcType=VARCHAR},
+      </if>
+      <if test="partsNumber != null" >
+        parts_number = #{partsNumber,jdbcType=INTEGER},
+      </if>
+      <if test="texture != null" >
+        texture = #{texture,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null" >
+        num = #{num,jdbcType=INTEGER},
+      </if>
+      <if test="productColor != null" >
+        product_color = #{productColor,jdbcType=VARCHAR},
+      </if>
+      <if test="open != null" >
+        open = #{open,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="v1 != null" >
+        v1 = #{v1,jdbcType=REAL},
+      </if>
+      <if test="v2 != null" >
+        v2 = #{v2,jdbcType=REAL},
+      </if>
+      <if test="v3 != null" >
+        v3 = #{v3,jdbcType=REAL},
+      </if>
+      <if test="nextStep != null" >
+        next_step = #{nextStep,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="doorTypeName != null" >
+        door_type_name = #{doorTypeName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.erp.pojo.ProductDetails" >
+    update product_details
+    set ddid = #{ddid,jdbcType=INTEGER},
+      product_id = #{productId,jdbcType=INTEGER},
+      bar_code = #{barCode,jdbcType=VARCHAR},
+      order_code = #{orderCode,jdbcType=VARCHAR},
+      package_number = #{packageNumber,jdbcType=INTEGER},
+      width = #{width,jdbcType=REAL},
+      height = #{height,jdbcType=REAL},
+      board = #{board,jdbcType=VARCHAR},
+      craft = #{craft,jdbcType=VARCHAR},
+      door_type = #{doorType,jdbcType=VARCHAR},
+      edge_shape = #{edgeShape,jdbcType=VARCHAR},
+      door_type_parts = #{doorTypeParts,jdbcType=VARCHAR},
+      door_type_parts_num = #{doorTypePartsNum,jdbcType=INTEGER},
+      face = #{face,jdbcType=VARCHAR},
+      parts = #{parts,jdbcType=VARCHAR},
+      parts_number = #{partsNumber,jdbcType=INTEGER},
+      texture = #{texture,jdbcType=VARCHAR},
+      num = #{num,jdbcType=INTEGER},
+      product_color = #{productColor,jdbcType=VARCHAR},
+      open = #{open,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      v1 = #{v1,jdbcType=REAL},
+      v2 = #{v2,jdbcType=REAL},
+      v3 = #{v3,jdbcType=REAL},
+      next_step = #{nextStep,jdbcType=VARCHAR},
+      state = #{state,jdbcType=VARCHAR},
+      door_type_name = #{doorTypeName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

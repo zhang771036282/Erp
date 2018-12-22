@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.erp.dao.OrderInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.erp.pojo.OrderInfo" >
+    <id column="ddid" property="ddid" jdbcType="INTEGER" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="nature" property="nature" jdbcType="VARCHAR" />
+    <result column="unit" property="unit" jdbcType="VARCHAR" />
+    <result column="logistics" property="logistics" jdbcType="VARCHAR" />
+    <result column="packing_type" property="packingType" jdbcType="VARCHAR" />
+    <result column="brand" property="brand" jdbcType="VARCHAR" />
+    <result column="order_address" property="orderAddress" jdbcType="VARCHAR" />
+    <result column="terminal_cutomer" property="terminalCutomer" jdbcType="VARCHAR" />
+    <result column="terminal_address" property="terminalAddress" jdbcType="VARCHAR" />
+    <result column="order_contact" property="orderContact" jdbcType="VARCHAR" />
+    <result column="contact_tel" property="contactTel" jdbcType="VARCHAR" />
+    <result column="order_time" property="orderTime" jdbcType="TIMESTAMP" />
+    <result column="order_taker" property="orderTaker" jdbcType="VARCHAR" />
+    <result column="salesman" property="salesman" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+    <result column="price" property="price" jdbcType="REAL" />
+    <result column="contract_pay" property="contractPay" jdbcType="REAL" />
+    <result column="actual_pay" property="actualPay" jdbcType="REAL" />
+    <result column="total_area" property="totalArea" jdbcType="REAL" />
+    <result column="payment" property="payment" jdbcType="VARCHAR" />
+    <result column="order_notes" property="orderNotes" jdbcType="VARCHAR" />
+    <result column="product_subtotal" property="productSubtotal" jdbcType="REAL" />
+    <result column="production_location" property="productionLocation" jdbcType="VARCHAR" />
+    <result column="operator" property="operator" jdbcType="VARCHAR" />
+    <result column="operate_time" property="operateTime" jdbcType="TIMESTAMP" />
+    <result column="operate_ip" property="operateIp" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ddid, code, type, nature, unit, logistics, packing_type, brand, order_address, terminal_cutomer, 
+    terminal_address, order_contact, contact_tel, order_time, order_taker, salesman, 
+    state, price, contract_pay, actual_pay, total_area, payment, order_notes, product_subtotal, 
+    production_location, operator, operate_time, operate_ip
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.erp.pojo.OrderInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from order_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from order_info
+    where ddid = #{ddid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from order_info
+    where ddid = #{ddid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.erp.pojo.OrderInfoExample" >
+    delete from order_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.erp.pojo.OrderInfo" >
+    insert into order_info (ddid, code, type, 
+      nature, unit, logistics, 
+      packing_type, brand, order_address, 
+      terminal_cutomer, terminal_address, order_contact, 
+      contact_tel, order_time, order_taker, 
+      salesman, state, price, 
+      contract_pay, actual_pay, total_area, 
+      payment, order_notes, product_subtotal, 
+      production_location, operator, operate_time, 
+      operate_ip)
+    values (#{ddid,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{nature,jdbcType=VARCHAR}, #{unit,jdbcType=VARCHAR}, #{logistics,jdbcType=VARCHAR}, 
+      #{packingType,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, #{orderAddress,jdbcType=VARCHAR}, 
+      #{terminalCutomer,jdbcType=VARCHAR}, #{terminalAddress,jdbcType=VARCHAR}, #{orderContact,jdbcType=VARCHAR}, 
+      #{contactTel,jdbcType=VARCHAR}, #{orderTime,jdbcType=TIMESTAMP}, #{orderTaker,jdbcType=VARCHAR}, 
+      #{salesman,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, #{price,jdbcType=REAL}, 
+      #{contractPay,jdbcType=REAL}, #{actualPay,jdbcType=REAL}, #{totalArea,jdbcType=REAL}, 
+      #{payment,jdbcType=VARCHAR}, #{orderNotes,jdbcType=VARCHAR}, #{productSubtotal,jdbcType=REAL}, 
+      #{productionLocation,jdbcType=VARCHAR}, #{operator,jdbcType=VARCHAR}, #{operateTime,jdbcType=TIMESTAMP}, 
+      #{operateIp,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.erp.pojo.OrderInfo" >
+    insert into order_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ddid != null" >
+        ddid,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="nature != null" >
+        nature,
+      </if>
+      <if test="unit != null" >
+        unit,
+      </if>
+      <if test="logistics != null" >
+        logistics,
+      </if>
+      <if test="packingType != null" >
+        packing_type,
+      </if>
+      <if test="brand != null" >
+        brand,
+      </if>
+      <if test="orderAddress != null" >
+        order_address,
+      </if>
+      <if test="terminalCutomer != null" >
+        terminal_cutomer,
+      </if>
+      <if test="terminalAddress != null" >
+        terminal_address,
+      </if>
+      <if test="orderContact != null" >
+        order_contact,
+      </if>
+      <if test="contactTel != null" >
+        contact_tel,
+      </if>
+      <if test="orderTime != null" >
+        order_time,
+      </if>
+      <if test="orderTaker != null" >
+        order_taker,
+      </if>
+      <if test="salesman != null" >
+        salesman,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="contractPay != null" >
+        contract_pay,
+      </if>
+      <if test="actualPay != null" >
+        actual_pay,
+      </if>
+      <if test="totalArea != null" >
+        total_area,
+      </if>
+      <if test="payment != null" >
+        payment,
+      </if>
+      <if test="orderNotes != null" >
+        order_notes,
+      </if>
+      <if test="productSubtotal != null" >
+        product_subtotal,
+      </if>
+      <if test="productionLocation != null" >
+        production_location,
+      </if>
+      <if test="operator != null" >
+        operator,
+      </if>
+      <if test="operateTime != null" >
+        operate_time,
+      </if>
+      <if test="operateIp != null" >
+        operate_ip,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ddid != null" >
+        #{ddid,jdbcType=INTEGER},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="nature != null" >
+        #{nature,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null" >
+        #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="logistics != null" >
+        #{logistics,jdbcType=VARCHAR},
+      </if>
+      <if test="packingType != null" >
+        #{packingType,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="orderAddress != null" >
+        #{orderAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="terminalCutomer != null" >
+        #{terminalCutomer,jdbcType=VARCHAR},
+      </if>
+      <if test="terminalAddress != null" >
+        #{terminalAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="orderContact != null" >
+        #{orderContact,jdbcType=VARCHAR},
+      </if>
+      <if test="contactTel != null" >
+        #{contactTel,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTime != null" >
+        #{orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderTaker != null" >
+        #{orderTaker,jdbcType=VARCHAR},
+      </if>
+      <if test="salesman != null" >
+        #{salesman,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=REAL},
+      </if>
+      <if test="contractPay != null" >
+        #{contractPay,jdbcType=REAL},
+      </if>
+      <if test="actualPay != null" >
+        #{actualPay,jdbcType=REAL},
+      </if>
+      <if test="totalArea != null" >
+        #{totalArea,jdbcType=REAL},
+      </if>
+      <if test="payment != null" >
+        #{payment,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNotes != null" >
+        #{orderNotes,jdbcType=VARCHAR},
+      </if>
+      <if test="productSubtotal != null" >
+        #{productSubtotal,jdbcType=REAL},
+      </if>
+      <if test="productionLocation != null" >
+        #{productionLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null" >
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="operateTime != null" >
+        #{operateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operateIp != null" >
+        #{operateIp,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.erp.pojo.OrderInfoExample" resultType="java.lang.Integer" >
+    select count(*) from order_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update order_info
+    <set >
+      <if test="record.ddid != null" >
+        ddid = #{record.ddid,jdbcType=INTEGER},
+      </if>
+      <if test="record.code != null" >
+        code = #{record.code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nature != null" >
+        nature = #{record.nature,jdbcType=VARCHAR},
+      </if>
+      <if test="record.unit != null" >
+        unit = #{record.unit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logistics != null" >
+        logistics = #{record.logistics,jdbcType=VARCHAR},
+      </if>
+      <if test="record.packingType != null" >
+        packing_type = #{record.packingType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.brand != null" >
+        brand = #{record.brand,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderAddress != null" >
+        order_address = #{record.orderAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.terminalCutomer != null" >
+        terminal_cutomer = #{record.terminalCutomer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.terminalAddress != null" >
+        terminal_address = #{record.terminalAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderContact != null" >
+        order_contact = #{record.orderContact,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactTel != null" >
+        contact_tel = #{record.contactTel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderTime != null" >
+        order_time = #{record.orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.orderTaker != null" >
+        order_taker = #{record.orderTaker,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salesman != null" >
+        salesman = #{record.salesman,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null" >
+        state = #{record.state,jdbcType=INTEGER},
+      </if>
+      <if test="record.price != null" >
+        price = #{record.price,jdbcType=REAL},
+      </if>
+      <if test="record.contractPay != null" >
+        contract_pay = #{record.contractPay,jdbcType=REAL},
+      </if>
+      <if test="record.actualPay != null" >
+        actual_pay = #{record.actualPay,jdbcType=REAL},
+      </if>
+      <if test="record.totalArea != null" >
+        total_area = #{record.totalArea,jdbcType=REAL},
+      </if>
+      <if test="record.payment != null" >
+        payment = #{record.payment,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderNotes != null" >
+        order_notes = #{record.orderNotes,jdbcType=VARCHAR},
+      </if>
+      <if test="record.productSubtotal != null" >
+        product_subtotal = #{record.productSubtotal,jdbcType=REAL},
+      </if>
+      <if test="record.productionLocation != null" >
+        production_location = #{record.productionLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.operator != null" >
+        operator = #{record.operator,jdbcType=VARCHAR},
+      </if>
+      <if test="record.operateTime != null" >
+        operate_time = #{record.operateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.operateIp != null" >
+        operate_ip = #{record.operateIp,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update order_info
+    set ddid = #{record.ddid,jdbcType=INTEGER},
+      code = #{record.code,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      nature = #{record.nature,jdbcType=VARCHAR},
+      unit = #{record.unit,jdbcType=VARCHAR},
+      logistics = #{record.logistics,jdbcType=VARCHAR},
+      packing_type = #{record.packingType,jdbcType=VARCHAR},
+      brand = #{record.brand,jdbcType=VARCHAR},
+      order_address = #{record.orderAddress,jdbcType=VARCHAR},
+      terminal_cutomer = #{record.terminalCutomer,jdbcType=VARCHAR},
+      terminal_address = #{record.terminalAddress,jdbcType=VARCHAR},
+      order_contact = #{record.orderContact,jdbcType=VARCHAR},
+      contact_tel = #{record.contactTel,jdbcType=VARCHAR},
+      order_time = #{record.orderTime,jdbcType=TIMESTAMP},
+      order_taker = #{record.orderTaker,jdbcType=VARCHAR},
+      salesman = #{record.salesman,jdbcType=VARCHAR},
+      state = #{record.state,jdbcType=INTEGER},
+      price = #{record.price,jdbcType=REAL},
+      contract_pay = #{record.contractPay,jdbcType=REAL},
+      actual_pay = #{record.actualPay,jdbcType=REAL},
+      total_area = #{record.totalArea,jdbcType=REAL},
+      payment = #{record.payment,jdbcType=VARCHAR},
+      order_notes = #{record.orderNotes,jdbcType=VARCHAR},
+      product_subtotal = #{record.productSubtotal,jdbcType=REAL},
+      production_location = #{record.productionLocation,jdbcType=VARCHAR},
+      operator = #{record.operator,jdbcType=VARCHAR},
+      operate_time = #{record.operateTime,jdbcType=TIMESTAMP},
+      operate_ip = #{record.operateIp,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.erp.pojo.OrderInfo" >
+    update order_info
+    <set >
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="nature != null" >
+        nature = #{nature,jdbcType=VARCHAR},
+      </if>
+      <if test="unit != null" >
+        unit = #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="logistics != null" >
+        logistics = #{logistics,jdbcType=VARCHAR},
+      </if>
+      <if test="packingType != null" >
+        packing_type = #{packingType,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        brand = #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="orderAddress != null" >
+        order_address = #{orderAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="terminalCutomer != null" >
+        terminal_cutomer = #{terminalCutomer,jdbcType=VARCHAR},
+      </if>
+      <if test="terminalAddress != null" >
+        terminal_address = #{terminalAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="orderContact != null" >
+        order_contact = #{orderContact,jdbcType=VARCHAR},
+      </if>
+      <if test="contactTel != null" >
+        contact_tel = #{contactTel,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTime != null" >
+        order_time = #{orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderTaker != null" >
+        order_taker = #{orderTaker,jdbcType=VARCHAR},
+      </if>
+      <if test="salesman != null" >
+        salesman = #{salesman,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=REAL},
+      </if>
+      <if test="contractPay != null" >
+        contract_pay = #{contractPay,jdbcType=REAL},
+      </if>
+      <if test="actualPay != null" >
+        actual_pay = #{actualPay,jdbcType=REAL},
+      </if>
+      <if test="totalArea != null" >
+        total_area = #{totalArea,jdbcType=REAL},
+      </if>
+      <if test="payment != null" >
+        payment = #{payment,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNotes != null" >
+        order_notes = #{orderNotes,jdbcType=VARCHAR},
+      </if>
+      <if test="productSubtotal != null" >
+        product_subtotal = #{productSubtotal,jdbcType=REAL},
+      </if>
+      <if test="productionLocation != null" >
+        production_location = #{productionLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="operator != null" >
+        operator = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="operateTime != null" >
+        operate_time = #{operateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operateIp != null" >
+        operate_ip = #{operateIp,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ddid = #{ddid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.erp.pojo.OrderInfo" >
+    update order_info
+    set code = #{code,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      nature = #{nature,jdbcType=VARCHAR},
+      unit = #{unit,jdbcType=VARCHAR},
+      logistics = #{logistics,jdbcType=VARCHAR},
+      packing_type = #{packingType,jdbcType=VARCHAR},
+      brand = #{brand,jdbcType=VARCHAR},
+      order_address = #{orderAddress,jdbcType=VARCHAR},
+      terminal_cutomer = #{terminalCutomer,jdbcType=VARCHAR},
+      terminal_address = #{terminalAddress,jdbcType=VARCHAR},
+      order_contact = #{orderContact,jdbcType=VARCHAR},
+      contact_tel = #{contactTel,jdbcType=VARCHAR},
+      order_time = #{orderTime,jdbcType=TIMESTAMP},
+      order_taker = #{orderTaker,jdbcType=VARCHAR},
+      salesman = #{salesman,jdbcType=VARCHAR},
+      state = #{state,jdbcType=INTEGER},
+      price = #{price,jdbcType=REAL},
+      contract_pay = #{contractPay,jdbcType=REAL},
+      actual_pay = #{actualPay,jdbcType=REAL},
+      total_area = #{totalArea,jdbcType=REAL},
+      payment = #{payment,jdbcType=VARCHAR},
+      order_notes = #{orderNotes,jdbcType=VARCHAR},
+      product_subtotal = #{productSubtotal,jdbcType=REAL},
+      production_location = #{productionLocation,jdbcType=VARCHAR},
+      operator = #{operator,jdbcType=VARCHAR},
+      operate_time = #{operateTime,jdbcType=TIMESTAMP},
+      operate_ip = #{operateIp,jdbcType=VARCHAR}
+    where ddid = #{ddid,jdbcType=INTEGER}
+  </update>
+</mapper>

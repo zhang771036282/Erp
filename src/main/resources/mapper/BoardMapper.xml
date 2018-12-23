@@ -270,4 +270,13 @@
       spec = #{spec,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+
+
+  <select id="findBoardCountByCode" parameterType="java.lang.String" resultType="int">
+    select count(1)
+    from board
+    where  code = #{code,jdbcType=VARCHAR}
+  </select>
 </mapper>

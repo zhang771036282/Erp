@@ -30,4 +30,11 @@ public interface BoardMapper {
     int updateByPrimaryKeySelective(Board record);
 
     int updateByPrimaryKey(Board record);
+
+    /**
+     * 根据编号或者ID查询基材的数量
+     * @param code 基材编号
+     * @return
+     */
+    int findBoardCountByCode(@Param("code")String code);
 }

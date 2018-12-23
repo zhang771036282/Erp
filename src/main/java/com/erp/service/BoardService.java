@@ -27,16 +27,20 @@ public class BoardService {
      * @return
      */
     public List<Board> findBoardByCode(String code) {
-        if(code.equals("") || code == "") {
+        if(code.equals("") || code == null) {
             return boardMapper.selectByExample(null);
         }
         BoardExample example = new BoardExample();
         Criteria criteria = example.createCriteria();
-        criteria.andNameLike("%"+code+"%");
+        criteria.andCodeLike("%"+code+"%");
         return boardMapper.selectByExample(example);
     }
 
-
+    /**
+     * 添加基材并且验证基材是否存在
+     * @param record
+     * @return
+     */
     public int insertSelective(Board record) {
         if(boardMapper.findBoardCountByCode(record.getCode())>0) {
             return 0;
@@ -44,14 +48,23 @@ public class BoardService {
         return boardMapper.insertSelective(record);
     }
 
+    /**
+     * 更新基材并且验证基材是否存在
+     * @param record
+     * @return
+     */
     public int updateByPrimaryKeySelective(Board record) {
-        Board board = boardMapper.selectByPrimaryKey(record.getId());
-        if(board == null) {
+        if(boardMapper.findBoardCountByCode(record.getCode())>0) {
             return 0;
         }
         return boardMapper.updateByPrimaryKeySelective(record);
     }
 
+    /**
+     * 删除基材
+     * @param id
+     * @return
+     */
     public int deleteByPrimaryKey(Integer id) {
         return boardMapper.deleteByPrimaryKey(id);
     }

@@ -11,11 +11,11 @@
         <package name="com.erp.pojo" />
     </typeAliases>
 
-    <plugins>
-        <!-- com.github.pagehelper为PageHelper类所在包名 -->
+    <!--<plugins>
+        &lt;!&ndash; com.github.pagehelper为PageHelper类所在包名 &ndash;&gt;
         <plugin interceptor="com.github.pagehelper.PageInterceptor">
             <property name="reasonable" value="true"/>
         </plugin>
-    </plugins>
+    </plugins>-->
 
 </configuration>

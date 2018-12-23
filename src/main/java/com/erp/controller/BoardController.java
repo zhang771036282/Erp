@@ -10,13 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.swing.border.Border;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
- *
+ * 基材Controller
  * @author zph2
  * @date 2018/12/22
  */
@@ -29,7 +28,7 @@ public class BoardController {
 
 
     @RequestMapping(value="/intoBoard")
-    public String page() {
+    public String intoBoard() {
         return "systemSetting/board";
     }
 
@@ -50,7 +49,7 @@ public class BoardController {
     public AjaxResult updateBoard(Board param) {
         int count =boardService .updateByPrimaryKeySelective(param);
         if(count == 0) {
-            return AjaxResult.fail("待更新的基材不存在，请重新选择");
+            return AjaxResult.fail("板材编号或板材名称已经存在，请重新录入");
         }else {
             return AjaxResult.success("更新成功");
         }
@@ -70,13 +69,13 @@ public class BoardController {
 
     @ResponseBody
     @RequestMapping(value="/selectBoardList")
-    public Map<String, Object> selectBoardList(@RequestParam(value="limit",defaultValue="1")Integer limit,
+    public Map<String, Object> selectBoardList(@RequestParam(value="page",defaultValue="1")Integer page,@RequestParam(value="10")Integer limit,
                                     @RequestParam(value="code") String code) {
-        PageHelper.startPage(limit, 10);
-        PageInfo<Border> pageInfo = new PageInfo(boardService.findBoardByCode(code));
+        PageHelper.startPage(page, limit);
+        List<Board> list = boardService.findBoardByCode(code);
+        PageInfo<Board> pageInfo = new PageInfo<>(list);
 
         Map<String, Object> map = new HashMap<>();
-
         if (pageInfo.getList() != null && pageInfo.getList().size() > 0) {
             map.put("code", 0);
             map.put("msg", "success");

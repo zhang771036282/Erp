@@ -55,7 +55,7 @@
   </filter-mapping>
 
   <!-- 错误页面 -->
-  <error-page>
+ <!-- <error-page>
     <error-code>404</error-code>
     <location>/WEB-INF/views/error/404.html</location>
   </error-page>
@@ -66,7 +66,7 @@
   <error-page>
     <exception-type>java.lang.Exception</exception-type>
     <location>/WEB-INF/views/error/exception.html</location>
-  </error-page>
+  </error-page>-->
 
   <!-- 使用Rest风格的URI，将页面普通的post请求转为指定的delete或put请求 -->
   <filter>

@@ -21,7 +21,7 @@
 </div>
 
 <table class="layui-hide" id="tableBoard" lay-filter="user"></table>
-<div id="page"></div>
+<div id="testReload"></div>
 <script id="board" type="text/html">
     <form class="layui-form" id="boardFrom">
         <div class="layui-form-item">
@@ -101,7 +101,6 @@
     layui.use(['form','table','laypage'], function() {
         var form = layui.form, table = layui.table, $ = layui.jquery, laypage = layui.laypage;
 
-
         pageList("", 1);
 
         $("#reload").click(function(){
@@ -109,15 +108,18 @@
             pageList(param,1);
         })
 
-        function pageList(param,limit){
+        function pageList(param,limit,page){
             //方法级渲染
             table.render({
                 elem : '#tableBoard',
                 url : '../board/selectBoardList',
                 where:{
-                    limit:limit,
+                    page:page,
+                    limitName:limit,
                     code:param
                 },
+                id : 'testReload',
+                page : true,
                 toolbar: '#toolbarDemo',
                 cellMinWidth: 80,
                 cols : [ [ {
@@ -133,10 +135,12 @@
                     title : '板材编号',
                 }, {
                     field : 'num',
+                    sort : true,
                     title : '板材数量',
                 }, {
                     field : 'price',
                     title : '基材价格',
+                    sort : true,
                     templet: '#priceTpl'
                 }, {
                     field : 'units',
@@ -156,23 +160,7 @@
                     toolbar: '#barDemo',
                     width : 150
                 }
-                ] ],
-                id : 'testReload',
-                page : false,
-                done : function(res, curr, count){
-                    laypage.render({
-                        elem : 'page',
-                        count : count,
-                        limit : res.pageSize,
-                        curr : res.pageNum,
-                        layout : [ 'count', 'prev', 'page', 'next', 'skip' ],
-                        jump : function(obj, first) {
-                            if (!first) {
-                                pageList(param,obj.curr);
-                            }
-                        }
-                    });
-                }
+                ] ]
             });
         }
         //头工具栏事件
@@ -261,8 +249,6 @@
                     closeBtn : 0,
                     anim : 6,
                     success : function(layero, index) {
-                        //
-                        $("#boardFrom").reset();
                         $("#id").val(data.id);
                         $("#code").val(data.code);
                         $("#price").val(data.price);
@@ -295,10 +281,6 @@
                 form.render();
             }
         });
-        /* $('.demoTable .layui-btn').on('click', function() {
-         var type = $(this).data('type');
-         active[type] ? active[type].call(this) : '';
-         }); */
     });
 </script>
 </html>

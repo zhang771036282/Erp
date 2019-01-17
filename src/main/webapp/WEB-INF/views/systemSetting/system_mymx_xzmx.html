@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>膜压门型_新增门型</title>
+		<link rel="stylesheet" href="../frame/layui/css/layui.css" type="text/css">
+		<link rel="stylesheet" href="../frame/static/css/style.css">	
+	</head>
+	<body>
+		<div class="layui-content">
+      		<h2>
+      			<a href="system_mymx.html">膜压门型</a>
+      			<span lay-separator="" style="color: #666;">»</span>
+                <a href="system_mymx_xzmx.html">新增门型</a>
+      		</h2>
+      		<a href="system_mymx.html"><button class="layui-btn my-btn-xzmx" data-type="getCheckData">保&nbsp;存</button></a>
+      		<a href="system_mymx.html"><button class="layui-btn my-btn-xzmx my-btn-xzmx-cancel" data-type="getCheckData">取&nbsp;消</button></a>
+      		<div class="layui-content-basic-inf">
+      			<h3 style="margin-top: 0px;margin-bottom: 12px;"><span>*</span>新增产品</h3>
+      			<div style="margin: -5px 0 -5px 30px;clear: left;">
+      				<form class="layui-form" action="">
+						<dl id="TCinsert" class="my-TCinsert">						
+							<dd>
+								<label class="layui-form-label">门型编号</label>
+								<div class="layui-input-inline">
+									<input type="text" name="door-num" lay-verify="required" placeholder="请输入门型编号" autocomplete="off" class="layui-input qymc team">
+								</div>
+							</dd>
+							<dd>
+								<label class="layui-form-label">门型名称</label>
+								<div class="layui-input-inline">
+									<input type="text" name="door-name" lay-verify="required" placeholder="请输入门型名称" autocomplete="off" class="layui-input qymc team">
+								</div>
+							</dd>
+							<dd>
+								<label class="layui-form-label">门型分类</label>
+								<div class="layui-input-inline">
+									<input type="text" name="door-type" lay-verify="required" placeholder="请输入门型分类" autocomplete="off" class="layui-input qymc team">
+								</div>
+							</dd>
+							<dd>
+								<label class="layui-form-label">所属系列</label>
+								<div class="layui-input-inline">
+                               	    <select name="quiz1" class="my-select-xzdd">
+                                   	    <option value="series1">门型系列1</option>
+                                        <option value="series2">门型系列2</option>
+                                        <option value="series3">门型系列3</option>
+               			      	    </select>
+             			        </div>
+						    </dd>
+						    <dd>
+							    <label class="layui-form-label">门型单价</label>
+								<div class="layui-input-inline">
+									<input type="text" name="door-unit-price" lay-verify="required" placeholder="请输入门型单价" autocomplete="off" class="layui-input qymc team">
+								</div>
+							</dd>
+							<dd>
+								<label class="layui-form-label">计价方式</label>
+								<div class="layui-input-inline">
+                                	<select name="quiz1" class="my-select-xzdd">
+                                    	<option value="methods1">计价方式1</option>
+                                  	    <option value="methods2">计价方式2</option>
+                                  	    <option value="methods3">计价方式3</option>
+               			       	    </select>
+             			        </div>
+							</dd>
+							<dd>
+								<label class="layui-form-label">最小宽度</label>
+								<div class="layui-input-inline">
+									<input type="text" name="min-width" lay-verify="required" placeholder="请输入最小宽度" autocomplete="off" class="layui-input qymc team">
+								</div>
+							</dd>
+							<dd>
+								<label class="layui-form-label">最大宽度</label>
+								<div class="layui-input-inline">
+									<input type="text" name="max-width" lay-verify="required" placeholder="请输入最大宽度" autocomplete="off" class="layui-input qymc team">
+								</div>
+							</dd>
+							<dd>
+								<label class="layui-form-label">最小高度</label>
+								<div class="layui-input-inline">
+									<input type="text" name="min-height" lay-verify="required" placeholder="请输入发货物流" autocomplete="off" class="layui-input qymc team">
+								</div>
+							</dd>
+							<dd>
+								<label class="layui-form-label">最大高度</label>
+								<div class="layui-input-inline">
+									<input type="text" name="max-height" lay-verify="required" placeholder="请输入终端地址" autocomplete="off" class="layui-input qymc team">
+								</div>
+							</dd>						
+						</dl>					
+					</form>      
+		        </div>
+		    </div>
+		    <div class="layui-content-accessories-inf">
+      			<h3 style="margin-bottom: 20px;"><span>*</span>配件信息表</h3>
+      			<button id="increase-btn" class="layui-btn may-btn-cpxx" onclick="incBtn(this)" data-type="getCheckData" style="margin-top: 11px;">+新增配件</button>
+		        <div class="layui-product-table layui-table-body">          	    	
+                    <table class="layui-table" lay-skin="line">
+        			<colgroup>
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+          			</colgroup>
+        		    <thead>
+         		        <tr>
+          		            <th>配件编号</th>
+          		            <th>配件名称</th>
+             		        <th>配件分类</th>
+             		        <th>配件规格</th>
+          		            <th>配件数量</th>	
+             		        <th>操作</th>
+          		        </tr> 
+        		    </thead>
+        		    <tbody>
+         		        <tr>
+          		            <td>26565623511</td>
+           		            <td>线条</td>
+             		        <td>分类1</td>
+             		        <td>配件规格</td>
+          		            <td>20</td>             		        
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delPj()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>26565623511</td>
+           		            <td>线条</td>
+             		        <td>分类1</td>
+             		        <td>配件规格</td>
+          		            <td>20</td>             		        
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delPj()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>26565623511</td>
+           		            <td>线条</td>
+             		        <td>分类1</td>
+             		        <td>配件规格</td>
+          		            <td>20</td>             		        
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delPj()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>26565623511</td>
+           		            <td>线条</td>
+             		        <td>分类1</td>
+             		        <td>配件规格</td>
+          		            <td>20</td>             		        
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delPj()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>26565623511</td>
+           		            <td>线条</td>
+             		        <td>分类1</td>
+             		        <td>配件规格</td>
+          		            <td>20</td>             		        
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delPj()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>26565623511</td>
+           		            <td>线条</td>
+             		        <td>分类1</td>
+             		        <td>配件规格</td>
+          		            <td>20</td>             		        
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delPj()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>26565623511</td>
+           		            <td>线条</td>
+             		        <td>分类1</td>
+             		        <td>配件规格</td>
+          		            <td>20</td>             		        
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delPj()">删除</a></td>
+           		        </tr>
+          		    </tbody>
+        		    </table>         	
+        	    </div>		
+		    </div>
+		</div>
+		<!--弹窗内容-->
+        <div id="redactPj" style="display: none;">
+		 	<div style="padding: 20px;">
+				<form class="layui-form" action="">
+					<dl id="TCinsert">
+						<dd>
+							<label class="layui-form-label">配件编号</label>
+							<div class="layui-input-inline">
+        						<select name="modules" lay-verify="required" lay-search>
+         							<option value="num1">26546561421</option>
+         						    <option value="num2">26546561422</option>
+         						    <option value="num3">26546561423</option>
+                               </select>                                
+                            </div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">配件数量</label>
+							<div class="layui-input-inline">
+								<input type="text" name="accessories-num" lay-verify="required" placeholder="请输入配件数量" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>		
+					</dl>					
+				</form>
+			</div>
+		</div>
+		
+		<script src="../frame/layui/layui.js"  charset="utf-8" type="text/javascript"></script>
+        <script src="../js/jquery-1.8.3.min.js"></script>
+        <!--<script src="../frame/layui/lay/modules/layer.js"></script>-->
+        <script type="text/javascript">
+       	    layui.use('layer', function(){
+                var layer = layui.layer;  
+//              layer.msg('hello');
+            });     
+       	       	
+        function incBtn(obj){
+//      	var tmp = obj;
+			var gymc = $(obj).parents("tr").children().eq(1).text();
+		    var gyname = $(obj).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['326px', 'auto'],//边框大小
+	            title:'新增配件',
+	            shade:0.2,
+	            offset:'300px',//距离顶部距离
+	            content:$('#redactPj').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	              parent.layer.close(index);
+	         	}
+	        });          	                	
+        }
+
+        function redactPj(obj){
+        	var tmp = obj;
+			var gymc = $(tmp).parents("tr").children().eq(1).text();
+		    var gyname = $(tmp).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['326px', 'auto'],//边框大小
+	            title:'编辑配件',
+	            shade:0.2,
+	            offset:'300px',//距离顶部距离
+	            content:$('#redactPj').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	              parent.layer.close(index);
+	         	}
+	     });          	                	
+        }
+        
+        function delPj() {      		    		
+			parent.layer.open({
+	            type:1,	         
+	            title:'删除配件',
+	            shade:0.2,
+	            offset:'300px',
+	            content:'<div style="padding: 30px 100px;">确定删除该配件吗？</div>',
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+	              parent.layer.close(index);
+	         	}
+	     	});  
+		}
+
+        </script>
+        		
+	</body>
+</html>

@@ -5,9 +5,6 @@ import com.erp.pojo.BrandExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-/**
- * @author zph2
- */
 public interface BrandMapper {
     int countByExample(BrandExample example);
 

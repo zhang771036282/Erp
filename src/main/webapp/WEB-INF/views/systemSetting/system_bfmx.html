@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>包覆门型</title>
+		<link rel="stylesheet" href="../frame/layui/css/layui.css" type="text/css">
+		<link rel="stylesheet" href="../frame/static/css/style.css">
+	</head>
+	<body>
+		<div class="layui-content">
+      		<h2>包覆门型</h2>
+      		<button id="increase-btn" class="layui-btn mymx-btn" onclick="incBtn(this)" data-type="getCheckData">+新增门型</button>
+      		<div class="layui-table-body">
+        		<table class="layui-table mymx-table" lay-skin="line">
+        			<colgroup>
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+          			</colgroup>
+        		    <thead>
+         		        <tr>
+          		            <th>编号</th>
+          		            <th>名称</th>
+             		        <th>门框</th>
+             		        <th>芯板</th>
+             		        <th>单价(元)</th>
+             		        <th>有无配件</th>
+          		            <th>边框宽(mm)</th>
+             		        <th>芯板插入深度(mm)</th>
+             		        <th>操作</th>
+          		        </tr> 
+        		    </thead>
+        		    <tbody>
+         		        <tr>
+          		            <td>551245656565</td>
+           		            <td>门型1</td>
+             		        <td>门框1</td>
+             		        <td>芯板1</td>
+             		        <td>50.00</td>
+             		        <td>无</td>
+          		            <td>1500.00</td>
+             		        <td>100.00</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactBfmx(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelBfmx()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>门型1</td>
+             		        <td>门框1</td>
+             		        <td>芯板1</td>
+             		        <td>50.00</td>
+             		        <td>无</td>
+          		            <td>1500.00</td>
+             		        <td>100.00</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactBfmx(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelBfmx()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>门型1</td>
+             		        <td>门框1</td>
+             		        <td>芯板1</td>
+             		        <td>50.00</td>
+             		        <td>无</td>
+          		            <td>1500.00</td>
+             		        <td>100.00</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactBfmx(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelBfmx()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>门型1</td>
+             		        <td>门框1</td>
+             		        <td>芯板1</td>
+             		        <td>50.00</td>
+             		        <td>无</td>
+          		            <td>1500.00</td>
+             		        <td>100.00</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactBfmx(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelBfmx()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>门型1</td>
+             		        <td>门框1</td>
+             		        <td>芯板1</td>
+             		        <td>50.00</td>
+             		        <td>无</td>
+          		            <td>1500.00</td>
+             		        <td>100.00</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactBfmx(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelBfmx()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>门型1</td>
+             		        <td>门框1</td>
+             		        <td>芯板1</td>
+             		        <td>50.00</td>
+             		        <td>无</td>
+          		            <td>1500.00</td>
+             		        <td>100.00</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactBfmx(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelBfmx()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>门型1</td>
+             		        <td>门框1</td>
+             		        <td>芯板1</td>
+             		        <td>50.00</td>
+             		        <td>无</td>
+          		            <td>1500.00</td>
+             		        <td>100.00</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactBfmx(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelBfmx()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>门型1</td>
+             		        <td>门框1</td>
+             		        <td>芯板1</td>
+             		        <td>50.00</td>
+             		        <td>无</td>
+          		            <td>1500.00</td>
+             		        <td>100.00</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactBfmx(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelBfmx()">删除</a></td>
+           		        </tr>
+          		    </tbody>
+        		</table>
+        </div>
+        <!--弹出层-->
+        <div id="incMx" style="display: none;">
+		 	<div style="padding: 20px;">
+				<form class="layui-form" action="">
+					<dl id="TCinsert">
+						<dd>
+							<label class="layui-form-label">编号</label>
+							<div class="layui-input-inline">
+								<input type="text" name="num" lay-verify="required" placeholder="请输入编号" autocomplete="off" class="layui-input gxgxgx">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">名称</label>
+							<div class="layui-input-inline">
+								<input type="text" name="name" lay-verify="required" placeholder="请输入名称" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">门框</label>
+							<div class="layui-input-inline">
+								<input type="text" name="door-frame" lay-verify="required" placeholder="请输入门框类型" autocomplete="off" class="layui-input gygygy">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">芯板</label>
+							<div class="layui-input-inline">
+								<input type="text" name="core-board" lay-verify="required" placeholder="请输入芯板" autocomplete="off" class="layui-input gxgxgx">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">单价</label>
+							<div class="layui-input-inline">
+								<input type="text" name="unit-price" lay-verify="required" placeholder="请输入单价" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">有无配件</label>							
+							<div class="layui-input-inline">
+        						<select name="modules" lay-verify="required" lay-search>
+         							<option value="no">无</option>
+         						    <option value="yes">有</option>
+                               </select>                                
+                            </div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">边框宽</label>
+							<div class="layui-input-inline">
+								<input type="text" name="border-width" lay-verify="required" placeholder="请输入边框宽" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label" style="line-height: 15px;">芯板插入深度</label>
+							<div class="layui-input-inline">
+								<input type="text" name="core-board-depth" lay-verify="required" placeholder="请输入芯板插入深度" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+					</dl>					
+				</form>
+			</div>
+		</div>
+        
+        
+       <script src="../frame/layui/layui.js"  charset="utf-8" type="text/javascript"></script>
+       <script src="../js/jquery-1.8.3.min.js"></script>
+       <!--<script src="../frame/layui/lay/modules/layer.js"></script>-->
+       <script type="text/javascript">
+       	    layui.use('layer', function(){
+                var layer = layui.layer;  
+//              layer.msg('hello');
+            });     
+       	       	
+        function incBtn(obj){
+//      	var tmp = obj;
+			var gymc = $(obj).parents("tr").children().eq(1).text();
+		    var gyname = $(obj).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['606px', 'auto'],//边框大小
+	            title:'新增门型',
+	            shade:0.2,
+	            offset:'200px',//距离顶部距离
+	            content:$('#incMx').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	              parent.layer.close(index);
+	         	}
+	     });          	                	
+        }
+
+        function RedactBfmx(obj){
+        	var tmp = obj;
+			var gymc = $(tmp).parents("tr").children().eq(1).text();
+		    var gyname = $(tmp).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['606px', 'auto'],//边框大小
+	            title:'编辑门型',
+	            shade:0.2,
+	            offset:'200px',//距离顶部距离
+	            content:$('#incMx').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	              parent.layer.close(index);
+	         	}
+	     });          	                	
+        }
+
+        function DelBfmx() {
+      		
+      		
+			parent.layer.open({
+	            type:1,	         
+	            title:'删除门型',
+	            shade:0.2,
+	            offset:'300px',
+	            content:'<div style="padding: 30px 100px;">确定删除该门型吗？</div>',
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+	              parent.layer.close(index);
+	         	}
+	     	});  
+		}
+
+
+        </script>
+	</body>
+</html>

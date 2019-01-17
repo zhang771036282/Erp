@@ -5,9 +5,6 @@ import com.erp.pojo.ProductInfoExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-/**
- * @author zph2
- */
 public interface ProductInfoMapper {
     int countByExample(ProductInfoExample example);
 

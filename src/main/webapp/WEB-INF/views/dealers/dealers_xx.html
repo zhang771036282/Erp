@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>经销商信息</title>
+		<link rel="stylesheet" href="../frame/layui/css/layui.css" type="text/css">
+		<link rel="stylesheet" href="../frame/static/css/style.css">
+		<link href="../frame/cityselect/cityLayout.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="layui-content">
+      		<h2>经销商信息</h2>
+      		<button id="increase-btn" class="layui-btn mymx-btn" onclick="incBtn(this)" data-type="getCheckData">+新增经销商</button>
+      		<div class="layui-table-body">
+        		<table class="layui-table mymx-table" lay-skin="line">
+        			<colgroup>
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="200">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+          			</colgroup>
+        		    <thead>
+         		        <tr>
+          		            <th>经销商编号</th>
+          		            <th>经销商名称</th>
+             		        <th>联系人</th>
+             		        <th>联系电话</th>
+          		            <th>地址</th>
+             		        <th>经销商等级</th>
+             		        <th>结算类型</th>
+             		        <th>业务员</th>
+             		        <th>操作</th>
+          		        </tr> 
+        		    </thead>
+        		    <tbody>
+         		        <tr>
+          		            <td>01</td>
+           		            <td>某某经销商</td>
+             		        <td>张三</td>
+             		        <td>13245678910</td>
+             		        <td>河南省郑州市郑东新区雅宝东方国际</td>
+          		            <td>V1</td>
+          		            <td>月结</td>
+          		            <td>李四</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactJxs(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelJxs()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>01</td>
+           		            <td>某某经销商</td>
+             		        <td>张三</td>
+             		        <td>13245678910</td>
+             		        <td>河南省郑州市郑东新区雅宝东方国际</td>
+          		            <td>V1</td>
+          		            <td>月结</td>
+          		            <td>李四</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactJxs(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelJxs()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>01</td>
+           		            <td>某某经销商</td>
+             		        <td>张三</td>
+             		        <td>13245678910</td>
+             		        <td>河南省郑州市郑东新区雅宝东方国际</td>
+          		            <td>V1</td>
+          		            <td>月结</td>
+          		            <td>李四</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactJxs(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelJxs()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>01</td>
+           		            <td>某某经销商</td>
+             		        <td>张三</td>
+             		        <td>13245678910</td>
+             		        <td>河南省郑州市郑东新区雅宝东方国际</td>
+          		            <td>V1</td>
+          		            <td>月结</td>
+          		            <td>李四</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactJxs(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelJxs()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>01</td>
+           		            <td>某某经销商</td>
+             		        <td>张三</td>
+             		        <td>13245678910</td>
+             		        <td>河南省郑州市郑东新区雅宝东方国际</td>
+          		            <td>V1</td>
+          		            <td>月结</td>
+          		            <td>李四</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactJxs(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelJxs()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>01</td>
+           		            <td>某某经销商</td>
+             		        <td>张三</td>
+             		        <td>13245678910</td>
+             		        <td>河南省郑州市郑东新区雅宝东方国际</td>
+          		            <td>V1</td>
+          		            <td>月结</td>
+          		            <td>李四</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactJxs(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelJxs()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>01</td>
+           		            <td>某某经销商</td>
+             		        <td>张三</td>
+             		        <td>13245678910</td>
+             		        <td>河南省郑州市郑东新区雅宝东方国际</td>
+          		            <td>V1</td>
+          		            <td>月结</td>
+          		            <td>李四</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactJxs(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelJxs()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>01</td>
+           		            <td>某某经销商</td>
+             		        <td>张三</td>
+             		        <td>13245678910</td>
+             		        <td>河南省郑州市郑东新区雅宝东方国际</td>
+          		            <td>V1</td>
+          		            <td>月结</td>
+          		            <td>李四</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactJxs(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelJxs()">删除</a></td>
+           		        </tr>
+          		    </tbody>
+        		</table>
+        </div>
+        
+        <!--弹出层-->
+        <div id="incJxs" style="display: none;">
+		 	<div style="padding: 20px;">
+				<form class="layui-form" action="">
+					<dl id="TCinsert" class="my-TCinsert-Dj">
+						<dd>
+							<label class="layui-form-label">经销商编号</label>
+							<div class="layui-input-inline">
+								<input type="text" name="num" lay-verify="required" placeholder="请输入经销商编号" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">经销商名称</label>
+							<div class="layui-input-inline">
+								<input type="text" name="name" lay-verify="required" placeholder="请输入经销商名称" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">联系人</label>
+							<div class="layui-input-inline">
+								<input type="text" name="contact-man" lay-verify="required" placeholder="请输入联系人姓名" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">联系电话</label>
+							<div class="layui-input-inline">
+								<input type="text" name="tel" lay-verify="required" placeholder="请输入联系电话" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">地址</label>
+          			        <div class="layui-input-inline">
+          			            <input  type="text" name="add" id="sel" class="city_input" placeholder="省/市/区" readonly="readonly" style="width: 158px;height: 28px;border: 1px solid #ddd;border-radius: 2px;padding: 0 10px;">
+          			        </div>
+						</dd> 
+						<dd>
+							<label class="layui-form-label">详细地址</label>
+          			        <div class="layui-input-inline">
+          			            <input type="text" name="detail-add" class="layui-input" placeholder="请输入详细地址">
+          			        </div>
+						</dd> 
+						<dd>
+							<label class="layui-form-label">经销商等级</label>
+							<div class="layui-input-inline" style="width: 176px;height: 30px;line-height: 30px;padding-left: 4px;">
+          			            V1
+          			        </div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">结算类型</label>
+          			        <div class="layui-input-inline">
+        						<select name="modules" lay-verify="required" lay-search>
+         							<option value="pay1">月结</option>
+         						    <option value="pay2">全款</option>
+                                </select>                                
+                            </div>
+						</dd>
+						<dd>
+          			        <label class="layui-form-label">业务员</label>
+			  			    <div class="layui-input-inline">
+			  			        <input type="text" name="salesman" class="layui-input" placeholder="请输入业务员名称">
+			  			    </div>
+						</dd>						
+					</dl>					
+				</form>
+			</div>
+		</div>
+		
+		<script src="../frame/layui/layui.js"  charset="utf-8" type="text/javascript"></script>
+        <script src="../js/jquery-1.8.3.min.js"></script>
+        <script src="../frame/cityselect/cityselect.js"></script> 
+        <!--<script src="../frame/layui/lay/modules/layer.js"></script>-->
+        <script type="text/javascript">
+       	    layui.use('layer', function(){
+                var layer = layui.layer;  
+//              layer.msg('hello');
+            });     
+       	       	
+        function incBtn(obj){
+//      	var tmp = obj;
+			var gymc = $(obj).parents("tr").children().eq(1).text();
+		    var gyname = $(obj).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['636px', 'auto'],//边框大小
+	            title:'新增经销商',
+	            shade:0.2,
+	            offset:'200px',//距离顶部距离
+	            content:$('#incJxs').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	//      隶属地区
+			        $(function(){
+				      	init_city_select($("#sel"));
+			      	});
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	                parent.layer.close(index);
+	         	}
+	     });          	                	
+        }
+
+        function RedactJxs(obj){
+        	var tmp = obj;
+			var gymc = $(tmp).parents("tr").children().eq(1).text();
+		    var gyname = $(tmp).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['636px', 'auto'],//边框大小
+	            title:'编辑经销商',
+	            shade:0.2,
+	            offset:'200px',//距离顶部距离
+	            content:$('#incJxs').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	//      隶属地区
+			        $(function(){
+				      	init_city_select($("#sel"));
+			      	});
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	                parent.layer.close(index);
+	         	}
+	     });          	                	
+        }
+
+        function DelJxs() {      		
+			parent.layer.open({
+	            type:1,	         
+	            title:'删除经销商',
+	            shade:0.2,
+	            offset:'300px',
+	            content:'<div style="padding: 30px 100px;">确定删除该经销商吗？</div>',
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+	                parent.layer.close(index);
+	         	}
+	     	});  
+		}
+
+
+
+        </script>
+		
+	</body>
+</html>

@@ -2,42 +2,21 @@ package com.erp.pojo;
 
 import java.util.Date;
 
-/**
- * 生产
- * @author zph2
- */
 public class Production {
-    /**
-     *生产ID
-     */
     private Integer id;
-    /**
-     *DDID
-     */
+
     private Integer ddid;
-    /**
-     *订单编号
-     */
+
     private String orderCode;
-    /**
-     *数量
-     */
+
     private Integer num;
-    /**
-     *完成时间
-     */
+
     private Date finishTime;
-    /**
-     *剩余时间
-     */
+
     private Integer remainingTime;
-    /**
-     *总板件数
-     */
+
     private Integer sum;
-    /**
-     *订单颜色
-     */
+
     private String orderColor;
 
     public Integer getId() {

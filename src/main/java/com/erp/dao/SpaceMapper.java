@@ -5,9 +5,6 @@ import com.erp.pojo.SpaceExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-/**
- * @author zph2
- */
 public interface SpaceMapper {
     int countByExample(SpaceExample example);
 

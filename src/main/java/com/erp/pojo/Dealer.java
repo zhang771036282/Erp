@@ -1,49 +1,24 @@
 package com.erp.pojo;
 
-/**
- * 经销商
- * @author zph2
- */
 public class Dealer {
-    /**
-     * 经销商ID
-     */
     private Integer id;
-    /**
-     * 经销商名称
-     */
+
     private String name;
-    /**
-     * 经销商地址
-     */
+
     private String address;
-    /**
-     * 经销商额度
-     */
+
     private Float amount;
-    /**
-     * 等级ID
-     */
+
     private Integer levelId;
-    /**
-     * 经销商电话
-     */
+
     private String phone;
-    /**
-     * 业务员
-     */
+
     private String saleman;
-    /**
-     * 经销商状态
-     */
+
     private String state;
-    /**
-     * 常用物流
-     */
+
     private String logistics;
-    /**
-     * 消费金额
-     */
+
     private Float monetary;
 
     public Integer getId() {

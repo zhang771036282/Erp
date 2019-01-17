@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>1010ERP管理系统</title>
+    <link rel="stylesheet" href="frame/layui/css/layui.css">
+    <link rel="stylesheet" href="./frame/static/css/style.css">
+    <link rel="icon" href="./frame/static/image/code.png">
+    <link href="../frame/cityselect/cityLayout.css" type="text/css" rel="stylesheet">
+</head>
+<body style="background-color: rgb(242,246,249);">
+
+<!-- layout admin -->
+<div class="layui-layout layui-layout-admin"> <!-- 添加skin-1类可手动修改主题为纯白，添加skin-2类可手动修改主题为蓝白 -->
+    <!-- header -->
+    <div class="layui-header my-header">
+        	<div class="layui-logo my-header-logo"><img src="img/index/logo.png"></img></div>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item my-header-nav-item">
+                   <a href="javascript:;">
+                                                                      用户名：某某用户
+                   </a>
+                </li>
+                <li class="layui-nav-item my-header-nav-item"><a href="login.html"><img src="img/index/exit.png" class="exit"/>退出</a></li>
+            </ul>       		
+        <!-- 顶部左侧添加选项卡监听 -->
+        <ul class="layui-nav" lay-filter="side-top-left">
+            <!--<li class="layui-nav-item"><a href="javascript:;" href-url="
+            	/btn.html"><i class="layui-icon">&#xe621;</i>按钮</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;"><i class="layui-icon">&#xe621;</i>基础</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="javascript:;" href-url="page/btn.html"><i class="layui-icon">&#xe621;</i>按钮</a></dd>
+                    <dd><a href="javascript:;" href-url="page/form.html"><i class="layui-icon">&#xe621;</i>表单</a></dd>
+                </dl>
+            </li>-->
+        </ul>
+
+        <!-- 顶部右侧添加选项卡监听 -->
+       
+    </div><!--header结束-->
+    
+    <!-- side -->
+    <div class="layui-side my-side" style="padding-top: 10px;">
+        <div class="layui-side-scroll">
+            <!-- 左侧主菜单添加选项卡监听 -->
+            <ul class="layui-nav layui-nav-tree my-nav" lay-filter="side-main">
+               <li class="layui-nav-item">
+                    <a href="javascript:;"><img src="img/index/order.png" class="my-icon">订单管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" href-url="page/order-manage_xz.html">新建订单</a></dd>
+                        <dd><a href="javascript:;" href-url="page/order-manage_cz.html">订单操作</a></dd>                        
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><img src="img/index/order.png" class="my-icon">订单查询</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" href-url="page/order-search_ddzt_dfk.html">订单状态</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><img src="img/index/scheduling.png" class="my-icon">排产管理</a> 
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" href-url="page/scheduling_ypc.html">已排产</a></dd>
+                        <dd><a href="javascript:;" href-url="page/scheduling_dpc.html">待排产</a></dd>                        
+                    </dl>
+                </li>                
+                <!--<li class="layui-nav-item">
+                    <a href="javascript:;"><img src="img/index/process.png" class="my-icon">流程监控</a> 
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" href-url="page/process_pc.html">排产</a></dd>  
+                        <dd><a href="javascript:;" href-url="page/process_jg.html">加工</a></dd> 
+                        <dd><a href="javascript:;" href-url="page/process_db.html">打包</a></dd> 
+                        <dd><a href="javascript:;" href-url="page/process_ck.html">出库</a></dd> 
+                    </dl>
+                </li>-->
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><img src="img/index/warehousing.png" class="my-icon">仓储管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" href-url="page/warehousing_hprk.html">货品入库</a></dd>
+                        <dd><a href="javascript:;" href-url="page/warehousing_hpck_bc.html">货品出库</a></dd>
+                        <dd><a href="javascript:;" href-url="page/warehousing_lsjl_ckjl.html">流水记录</a></dd>
+                        <dd><a href="javascript:;" href-url="page/warehousing_hpkc.html">货品库存</a></dd>                       
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><img src="img/index/finance.png" class="my-icon">财务审核</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" href-url="page/finance_ddsh.html">订单审核</a></dd>
+                        <dd><a href="javascript:;" href-url="page/finance_cksh.html">出库审核</a></dd>  
+                        <dd><a href="javascript:;" href-url="page/finance_yjmx.html">月结明细</a></dd> 
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><img src="img/index/personnel.png" class="my-icon">人事管理</a>  
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" href-url="page/personnel_xzyg.html">新增员工</a></dd>
+                        <dd><a href="javascript:;" href-url="page/personnel_ygxx.html">员工信息</a></dd>                        
+                    </dl>
+                </li>                                
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><img src="img/index/setting.png" class="my-icon">系统设置</a>
+                    <dl class="layui-nav-child">                       
+                        <dd><a href="javascript:;" href-url="page/system_mymx.html">膜压门型</a></dd>
+                        <dd><a href="javascript:;" href-url="page/system_mxxl.html">门型系列</a></dd>
+                        <dd><a href="javascript:;" href-url="page/system_pjsz.html">配件设置</a></dd> 
+                        <dd><a href="javascript:;" href-url="page/system_jcsz.html">基材设置</a></dd>
+                        <dd><a href="javascript:;" href-url="page/system_mpsz.html">膜皮设置</a></dd>
+                        <dd><a href="javascript:;" href-url="page/system_bjsz_jcbj.html">报价设置</a></dd>
+                        <dd><a href="javascript:;" href-url="page/system_gxsz.html">工序设置</a></dd>
+                        <dd><a href="javascript:;" href-url="page/system_gylc.html">工艺流程</a></dd>
+                        <dd><a href="javascript:;" href-url="page/system_ppgl.html">品牌管理</a></dd>
+                        <dd><a href="javascript:;" href-url="page/system_cwgl.html">仓位管理</a></dd>
+                        <dd><a href="javascript:;" href-url="page/system_ghsgl.html">供货商管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><img src="img/index/personnel.png" class="my-icon">经销商管理</a>  
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" href-url="page/dealers_xz.html">新增经销商</a></dd>
+                        <dd><a href="javascript:;" href-url="page/dealers_dj.html">经销商等级</a></dd>
+                        <dd><a href="javascript:;" href-url="page/dealers_zh.html">经销商账号</a></dd>
+                        <dd><a href="javascript:;" href-url="page/dealers_xx.html">经销商信息</a></dd>
+                    </dl>
+                </li> 
+                <li class="layui-nav-item">
+                    <a href="javascript:;"><img src="img/index/personal.png" class="my-icon">个人中心</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" href-url="page/personal_lsdd.html">历史订单</a></dd>
+                        <dd><a href="javascript:;" href-url="page/personal_xgmm.html">修改密码</a></dd>                        
+                    </dl>
+                </li>               
+            	
+            </ul>
+
+        </div>
+    </div>
+    <!-- body -->
+    <div class="layui-body my-body" style="margin-left: 10px;margin-top: 10px; background-color: white;">
+        <div class="layui-tab layui-tab-card my-tab" lay-filter="card" lay-allowClose="true">
+            <ul class="layui-tab-title">
+                <li class="layui-this" lay-id="1"><span><i class="layui-icon">&#xe638;</i>欢迎页</span></li>
+            </ul>
+            <div class="layui-tab-content" style="padding-left: 20px;padding-top: 20px;">
+                <div class="layui-tab-item layui-show">
+                    <iframe id="iframe" src="page/welcome.html" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- 右键菜单 -->
+<div class="my-dblclick-box none">
+    <table class="layui-tab dblclick-tab">
+        <tr class="card-refresh">
+            <td><i class="layui-icon">&#x1002;</i>刷新当前标签</td>
+        </tr>
+        <tr class="card-close">
+            <td><i class="layui-icon">&#x1006;</i>关闭当前标签</td>
+        </tr>
+        <tr class="card-close-all">
+            <td><i class="layui-icon">&#x1006;</i>关闭所有标签</td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript" src="frame/layui/layui.js"></script>
+<script type="text/javascript" src="frame/static/js/vip_comm.js"></script>
+<script type="text/javascript">
+	layui.use(['layer','vip_nav'], function () {
+	
+	    // 操作对象
+	    var layer       = layui.layer
+	        ,vipNav     = layui.vip_nav
+	        ,$          = layui.jquery;
+	
+	    // 顶部左侧菜单生成 [请求地址,过滤ID,是否展开,携带参数]
+//	    vipNav.top_left('./json/nav_top_left.json','side-top-left',false);
+	    // 主体菜单生成 [请求地址,过滤ID,是否展开,携带参数]
+//	    vipNav.main('./json/nav_main.json','side-main',true);
+	
+	    // you code ...
+	
+	
+	});
+	
+</script>
+</body>
+</html>

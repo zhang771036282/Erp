@@ -5,9 +5,6 @@ import com.erp.pojo.DoorTypePartsExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-/**
- * @author zph2
- */
 public interface DoorTypePartsMapper {
     int countByExample(DoorTypePartsExample example);
 

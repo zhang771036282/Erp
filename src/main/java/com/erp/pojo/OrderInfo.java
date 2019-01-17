@@ -2,118 +2,59 @@ package com.erp.pojo;
 
 import java.util.Date;
 
-/**
- * 项目
- * @author zph2
- */
 public class OrderInfo {
-    /**
-     * 项目ID
-     */
     private Integer ddid;
-    /**
-     * 订单编号
-     */
+
     private String code;
-    /**
-     * 订单分类（包覆  吸塑  移门）
-     */
+
     private String type;
-    /**
-     * 订单性质（正常单，工程单，补单，返单 ）
-     */
+
     private String nature;
-    /**
-     * 订货单位
-     */
+
     private String unit;
-    /**
-     * 物流
-     */
+
     private String logistics;
-    /**
-     * 包装类型
-     */
+
     private String packingType;
-    /**
-     * 订单品牌
-     */
+
     private String brand;
-    /**
-     * 订货单位地址（收货地址）
-     */
+
     private String orderAddress;
-    /**
-     * 终端客户
-     */
+
     private String terminalCutomer;
-    /**
-     * 终端地址
-     */
+
     private String terminalAddress;
-    /**
-     *订货单位联系人
-     */
+
     private String orderContact;
-    /**
-     * 联系人电话
-     */
+
     private String contactTel;
-    /**
-     * 下单时间
-     */
+
     private Date orderTime;
-    /**
-     * 接单人
-     */
+
     private String orderTaker;
-    /**
-     * 业务员
-     */
+
     private String salesman;
-    /**
-     * 订单状态（1.未付款 未审核 2.已付款 已审核 待排产3.已排产4.已完成 5.待出库 6.已出库 ）
-     */
+
     private Integer state;
-    /**
-     * 订单金额
-     */
+
     private Float price;
-    /**
-     * 应付金额
-     */
+
     private Float contractPay;
-    /**
-     * 实付金额(出库判断（实付金额=已付金额  已结清）)
-     */
+
     private Float actualPay;
-    /**
-     * 订单总面积
-     */
+
     private Float totalArea;
-    /**
-     * 付款方式（1.全款 2.首款 3.月结 4.已结清）
-     */
+
     private String payment;
-    /**
-     * 订单备注
-     */
+
     private String orderNotes;
-    /**
-     *产品小计
-     */
+
     private Float productSubtotal;
-    /**
-     *订单所在生产工位
-     */
+
     private String productionLocation;
-    /**
-     *操作人
-     */
+
     private String operator;
-    /**
-     *操作IP
-     */
+
     private Date operateTime;
 
     private String operateIp;

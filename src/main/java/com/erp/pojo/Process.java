@@ -1,21 +1,10 @@
 package com.erp.pojo;
 
-/**
- * 工序
- * @author zph2
- */
 public class Process {
-    /**
-     *工序ID
-     */
     private Integer id;
-    /**
-     *工序名称
-     */
+
     private String name;
-    /**
-     *工艺ID
-     */
+
     private Integer craftId;
 
     public Integer getId() {

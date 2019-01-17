@@ -5,9 +5,6 @@ import com.erp.pojo.MembraneExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-/**
- * @author zph2
- */
 public interface MembraneMapper {
     int countByExample(MembraneExample example);
 

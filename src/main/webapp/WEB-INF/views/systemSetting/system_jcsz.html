@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>基材设置</title>
+		<link rel="stylesheet" href="../frame/layui/css/layui.css" type="text/css">
+		<link rel="stylesheet" href="../frame/static/css/style.css">
+	</head>
+	<body>
+		<div class="layui-content">
+      		<h2>基材设置</h2>
+      		<div class="layui-content-lyl">
+      		    <h3 style="margin-top: 0px;"><span>*</span>利用率设置</h3>
+      		    <div class="layui-content-lyl-content1" style="margin-left: 40px;">
+      			    <span class="layui-content-lyl-title">利用率</span>
+      			    2.5/张
+      			    <button class="layui-btn my-btn-lyl-sz" data-type="getCheckData"><a href="#">设&nbsp;置</a></button>      			
+      		    </div>
+      		    <div class="layui-content-lyl-content2" style="display: none;margin-left: 40px;">
+      			    <span class="layui-content-lyl-title">利用率</span>
+      			    <input type="text" name="lyl" lay-verify="required" autocomplete="off" class="layui-input my-input-lyl">/张
+      			    <button class="layui-btn my-btn-lyl-bc" data-type="getCheckData" style="background: rgb(255,150,26)!important"><a href="#">保&nbsp;存</a></button>      			
+      		    </div>     		    
+      		</div>
+      		<div class="layui-content-jcszb">
+      			<div class="layui-content-jcszb-top">
+      			    <h3 style="margin: 0 20px;line-height: 30px;"><span>*</span>基材设置表</h3>
+      			    <button id="increase-btn" class="layui-btn my-btn-xzjc" onclick="incBtn(this)" data-type="getCheckData">+新增基材</button>
+      			</div>
+      			<div class="layui-table-body" style="margin: 0 20px 0 40px;">
+        			<table class="layui-table mymx-table" lay-skin="line">
+        			<colgroup>
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+          			</colgroup>
+        		    <thead>
+         		        <tr>
+         		        	<th>基材条码</th>
+          		            <th>基材编号</th>
+          		            <th>基材名称</th>
+          		            <th>基材分类</th>
+             		        <th>基材规格</th>
+             		        <th>基材单位</th>
+          		            <th>基材单价(元)</th>
+             		        <th>计价方式</th>             		        
+          		            <th>库存预警</th>
+             		        <th>状态</th>
+             		        <th>供货商</th>
+             		        <th>操作</th>
+          		        </tr> 
+        		    </thead>
+        		    <tbody>
+         		        <tr>
+          		            <td>551245656565</td>
+          		            <td>001</td>
+           		            <td>基材1</td>
+           		            <td>分类1</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>            		        
+          		            <td>10</td>
+             		        <td>状态1</td>
+             		        <td>供货商1</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactJc(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delJc()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+          		            <td>001</td>
+           		            <td>基材1</td>
+           		            <td>分类1</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>            		        
+          		            <td>10</td>
+             		        <td>状态1</td>
+             		        <td>供货商1</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactJc(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delJc()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+          		            <td>001</td>
+           		            <td>基材1</td>
+           		            <td>分类1</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>            		        
+          		            <td>10</td>
+             		        <td>状态1</td>
+             		        <td>供货商1</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactJc(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delJc()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+          		            <td>001</td>
+           		            <td>基材1</td>
+           		            <td>分类1</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>            		        
+          		            <td>10</td>
+             		        <td>状态1</td>
+             		        <td>供货商1</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactJc(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delJc()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+          		            <td>001</td>
+           		            <td>基材1</td>
+           		            <td>分类1</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>            		        
+          		            <td>10</td>
+             		        <td>状态1</td>
+             		        <td>供货商1</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactJc(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delJc()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+          		            <td>001</td>
+           		            <td>基材1</td>
+           		            <td>分类1</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>            		        
+          		            <td>10</td>
+             		        <td>状态1</td>
+             		        <td>供货商1</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactJc(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delJc()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+          		            <td>001</td>
+           		            <td>基材1</td>
+           		            <td>分类1</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>            		        
+          		            <td>10</td>
+             		        <td>状态1</td>
+             		        <td>供货商1</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactJc(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delJc()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+          		            <td>001</td>
+           		            <td>基材1</td>
+           		            <td>分类1</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>            		        
+          		            <td>10</td>
+             		        <td>状态1</td>
+             		        <td>供货商1</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactJc(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delJc()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+          		            <td>001</td>
+           		            <td>基材1</td>
+           		            <td>分类1</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>            		        
+          		            <td>10</td>
+             		        <td>状态1</td>
+             		        <td>供货商1</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactJc(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delJc()">删除</a></td>
+           		        </tr>
+          		    </tbody>
+        		    </table>
+                </div>
+      		</div>
+      	</div>	
+      		
+      		
+        <!--弹出层-->
+        <div id="incJc" style="display: none;">
+		 	<div style="padding: 20px;">
+				<form class="layui-form" action="">
+					<dl id="TCinsert">
+						<dd>
+							<label class="layui-form-label">基材条码</label>
+							<div class="layui-input-inline">
+								<input type="text" name="barcode" lay-verify="required" placeholder="请输入基材条码" autocomplete="off" class="layui-input gxgxgx">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">基材编号</label>
+							<div class="layui-input-inline">
+								<input type="text" name="num" lay-verify="required" placeholder="请输入基材编号" autocomplete="off" class="layui-input gxgxgx">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">基材名称</label>
+							<div class="layui-input-inline">
+								<input type="text" name="name" lay-verify="required" placeholder="请输入基材名称" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">基材分类</label>
+							<div class="layui-input-inline">
+								<input type="text" name="sort" lay-verify="required" placeholder="请输入基材分类" autocomplete="off" class="layui-input gygygy">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">基材规格</label>
+							<div class="layui-input-inline">
+								<input type="text" name="size" lay-verify="required" placeholder="请输入基材规格" autocomplete="off" class="layui-input gygygy">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">基材单位</label>
+							<div class="layui-input-inline">
+								<input type="text" name="unit" lay-verify="required" placeholder="请输入基材单位" autocomplete="off" class="layui-input gxgxgx">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">基材单价</label>
+							<div class="layui-input-inline">
+								<input type="text" name="unit-price" lay-verify="required" placeholder="请输入基材单价" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">计价方式</label>							
+							<div class="layui-input-inline">
+        						<select name="modules" lay-verify="required" lay-search>
+         							<option value="valuation-methods1">计价方式1</option>
+         						    <option value="valuation-methods2">计价方式2</option>
+         						    <option value="valuation-methods3">计价方式3</option>
+         						    <option value="valuation-methods4">计价方式4</option>
+         						    <option value="valuation-methods5">计价方式5</option>
+                               </select>                                
+                            </div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">库存预警</label>
+							<div class="layui-input-inline">
+								<input type="text" name="warning-num" lay-verify="required" placeholder="请输入库存预警值" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<!--<dd>
+							<label class="layui-form-label">状态</label>
+							<div class="layui-input-inline">
+								<input type="text" name="state" lay-verify="required" placeholder="请输入状态" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>-->
+						<dd>
+							<label class="layui-form-label">供货商</label>							
+							<div class="layui-input-inline">
+        						<select name="modules" lay-verify="required" lay-search>
+         							<option value="supplier1">供货商1</option>
+         						    <option value="supplier2">供货商2</option>
+         						    <option value="supplier3">供货商3</option>
+         						    <option value="supplier4">供货商4</option>
+         						    <option value="supplier5">供货商5</option>
+                               </select>                                
+                            </div>
+						</dd>						
+					</dl>					
+				</form>
+			</div>
+		</div>
+        
+        
+       <script src="../frame/layui/layui.js"  charset="utf-8" type="text/javascript"></script>
+       <script src="../js/jquery-1.8.3.min.js"></script>
+       <!--<script src="../frame/layui/lay/modules/layer.js"></script>-->
+       <script type="text/javascript">
+       	    layui.use('layer', function(){
+                var layer = layui.layer;  
+//              layer.msg('hello');
+            });     
+       	       	
+        function incBtn(obj){
+//      	var tmp = obj;
+			var gymc = $(obj).parents("tr").children().eq(1).text();
+		    var gyname = $(obj).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['606px', 'auto'],//边框大小
+	            title:'新增基材',
+	            shade:0.2,
+	            offset:'200px',//距离顶部距离
+	            content:$('#incJc').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	              parent.layer.close(index);
+	         	}
+	     });          	                	
+        }
+
+        function redactJc(obj){
+        	var tmp = obj;
+			var gymc = $(tmp).parents("tr").children().eq(1).text();
+		    var gyname = $(tmp).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['606px', 'auto'],//边框大小
+	            title:'编辑基材',
+	            shade:0.2,
+	            offset:'200px',//距离顶部距离
+	            content:$('#incJc').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	              parent.layer.close(index);
+	         	}
+	     });          	                	
+        }
+
+        function delJc() {     		     		
+			parent.layer.open({
+	            type:1,	         
+	            title:'删除基材',
+	            shade:0.2,
+	            offset:'300px',
+	            content:'<div style="padding: 30px 100px;">确定删除该基材吗？</div>',
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+	              parent.layer.close(index);
+	         	}
+	     	});  
+		}
+
+//      利用率设置
+        $(".layui-content-lyl-content1").show();
+        $(".layui-content-lyl-content2").hide();	
+        $(".my-btn-lyl-sz").click(function() {
+	        $(".layui-content-lyl-content2").show();
+            $(".layui-content-lyl-content1").hide();
+        });
+        $(".my-btn-lyl-bc").click(function() {
+	        $(".layui-content-lyl-content1").show();
+            $(".layui-content-lyl-content2").hide();
+        });
+
+
+
+        </script>
+	</body>
+</html>

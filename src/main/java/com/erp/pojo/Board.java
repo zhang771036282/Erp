@@ -1,47 +1,31 @@
 package com.erp.pojo;
 
-/**
- * 基材
- * @author zph2
- */
 public class Board {
-
-    /**
-     * 基材ID
-     */
     private Integer id;
-    /**
-     * 基材编号
-     */
+
+    private String barCode;
+
     private String code;
-    /**
-     * 基材名称
-     */
+
     private String name;
-    /**
-     * 基材单价
-     */
+
     private Float price;
-    /**
-     * 库存数量
-     */
+
     private Integer num;
-    /**
-     * 计价单位（㎡/m）
-     */
+
     private String units;
-    /**
-     * 供货商
-     */
+
     private String supplier;
-    /**
-     * 单位
-     */
+
     private String company;
-    /**
-     * 规格
-     */
+
+    private Float warning;
+
     private String spec;
+
+    private Float useRatio;
+
+    private Integer state;
 
     public Integer getId() {
         return id;
@@ -49,6 +33,14 @@ public class Board {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getBarCode() {
+        return barCode;
+    }
+
+    public void setBarCode(String barCode) {
+        this.barCode = barCode == null ? null : barCode.trim();
     }
 
     public String getCode() {
@@ -107,11 +99,35 @@ public class Board {
         this.company = company == null ? null : company.trim();
     }
 
+    public Float getWarning() {
+        return warning;
+    }
+
+    public void setWarning(Float warning) {
+        this.warning = warning;
+    }
+
     public String getSpec() {
         return spec;
     }
 
     public void setSpec(String spec) {
         this.spec = spec == null ? null : spec.trim();
+    }
+
+    public Float getUseRatio() {
+        return useRatio;
+    }
+
+    public void setUseRatio(Float useRatio) {
+        this.useRatio = useRatio;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 }

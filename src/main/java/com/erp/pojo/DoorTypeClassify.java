@@ -1,21 +1,10 @@
 package com.erp.pojo;
 
-/**
- * 门型分类
- * @author zph2
- */
 public class DoorTypeClassify {
-    /**
-     * 门型分类ID
-     */
     private Integer id;
-    /**
-     * 门型分类名称
-     */
+
     private String name;
-    /**
-     * 分类加价(元)
-     */
+
     private Float classifyPrice;
 
     public Integer getId() {

@@ -5,9 +5,6 @@ import com.erp.pojo.ProcessExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-/**
- * @author zph2
- */
 public interface ProcessMapper {
     int countByExample(ProcessExample example);
 

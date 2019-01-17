@@ -3,9 +3,6 @@ package com.erp.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author zph2
- */
 public class ProductInfoExample {
     protected String orderByClause;
 

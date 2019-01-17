@@ -5,9 +5,6 @@ import com.erp.pojo.StorageInfoExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-/**
- * @author zph2
- */
 public interface StorageInfoMapper {
     int countByExample(StorageInfoExample example);
 

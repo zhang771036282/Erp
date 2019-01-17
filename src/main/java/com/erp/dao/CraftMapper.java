@@ -5,9 +5,6 @@ import com.erp.pojo.CraftExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-/**
- * @author zph2
- */
 public interface CraftMapper {
     int countByExample(CraftExample example);
 

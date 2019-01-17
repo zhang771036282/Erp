@@ -1,21 +1,10 @@
 package com.erp.pojo;
 
-/**
- * 计算系数
- * @author zph2
- */
 public class CalcCoefficients {
-    /**
-     *计算系数ID
-     */
     private Integer id;
-    /**
-     * 计算系数名称
-     */
+
     private String name;
-    /**
-     * 计算系数表达式
-     */
+
     private String calcFormulas;
 
     public Integer getId() {

@@ -1,29 +1,14 @@
 package com.erp.pojo;
 
-/**
- * 子账号
- * @author zph2
- */
 public class BypassAccount {
-    /**
-     * 子账号ID
-     */
     private Integer id;
-    /**
-     * 子账号用户名
-     */
+
     private String username;
-    /**
-     * 子账号密码
-     */
+
     private String password;
-    /**
-     * 对应经销商
-     */
+
     private Integer dealerId;
-    /**
-     * 状态
-     */
+
     private Integer state;
 
     public Integer getId() {

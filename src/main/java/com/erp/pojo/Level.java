@@ -1,29 +1,14 @@
 package com.erp.pojo;
 
-/**
- * 等级
- * @author zph2
- */
 public class Level {
-    /**
-     * 等级ID
-     */
     private Integer id;
-    /**
-     * 等级名称
-     */
+
     private String name;
-    /**
-     * 等级上限（元）
-     */
+
     private Float upperLimit;
-    /**
-     * 等级下限(元)
-     */
+
     private Float floorLimit;
-    /**
-     * 折扣
-     */
+
     private Float discount;
 
     public Integer getId() {

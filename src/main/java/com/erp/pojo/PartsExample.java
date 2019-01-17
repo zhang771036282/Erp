@@ -3,9 +3,6 @@ package com.erp.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author zph2
- */
 public class PartsExample {
     protected String orderByClause;
 
@@ -704,6 +701,126 @@ public class PartsExample {
 
         public Criteria andSupplierNotBetween(String value1, String value2) {
             addCriterion("supplier not between", value1, value2, "supplier");
+            return (Criteria) this;
+        }
+
+        public Criteria andWarningIsNull() {
+            addCriterion("warning is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andWarningIsNotNull() {
+            addCriterion("warning is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andWarningEqualTo(Float value) {
+            addCriterion("warning =", value, "warning");
+            return (Criteria) this;
+        }
+
+        public Criteria andWarningNotEqualTo(Float value) {
+            addCriterion("warning <>", value, "warning");
+            return (Criteria) this;
+        }
+
+        public Criteria andWarningGreaterThan(Float value) {
+            addCriterion("warning >", value, "warning");
+            return (Criteria) this;
+        }
+
+        public Criteria andWarningGreaterThanOrEqualTo(Float value) {
+            addCriterion("warning >=", value, "warning");
+            return (Criteria) this;
+        }
+
+        public Criteria andWarningLessThan(Float value) {
+            addCriterion("warning <", value, "warning");
+            return (Criteria) this;
+        }
+
+        public Criteria andWarningLessThanOrEqualTo(Float value) {
+            addCriterion("warning <=", value, "warning");
+            return (Criteria) this;
+        }
+
+        public Criteria andWarningIn(List<Float> values) {
+            addCriterion("warning in", values, "warning");
+            return (Criteria) this;
+        }
+
+        public Criteria andWarningNotIn(List<Float> values) {
+            addCriterion("warning not in", values, "warning");
+            return (Criteria) this;
+        }
+
+        public Criteria andWarningBetween(Float value1, Float value2) {
+            addCriterion("warning between", value1, value2, "warning");
+            return (Criteria) this;
+        }
+
+        public Criteria andWarningNotBetween(Float value1, Float value2) {
+            addCriterion("warning not between", value1, value2, "warning");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateIsNull() {
+            addCriterion("state is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateIsNotNull() {
+            addCriterion("state is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateEqualTo(Integer value) {
+            addCriterion("state =", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotEqualTo(Integer value) {
+            addCriterion("state <>", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateGreaterThan(Integer value) {
+            addCriterion("state >", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateGreaterThanOrEqualTo(Integer value) {
+            addCriterion("state >=", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateLessThan(Integer value) {
+            addCriterion("state <", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateLessThanOrEqualTo(Integer value) {
+            addCriterion("state <=", value, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateIn(List<Integer> values) {
+            addCriterion("state in", values, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotIn(List<Integer> values) {
+            addCriterion("state not in", values, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateBetween(Integer value1, Integer value2) {
+            addCriterion("state between", value1, value2, "state");
+            return (Criteria) this;
+        }
+
+        public Criteria andStateNotBetween(Integer value1, Integer value2) {
+            addCriterion("state not between", value1, value2, "state");
             return (Criteria) this;
         }
     }

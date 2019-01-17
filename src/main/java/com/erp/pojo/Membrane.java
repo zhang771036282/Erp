@@ -1,50 +1,35 @@
 package com.erp.pojo;
 
-/**
- * 膜皮
- * @author zph2
- */
 public class Membrane {
-    /**
-     * 膜皮ID
-     */
     private Integer id;
-    /**
-     * 膜皮编号
-     */
+
+    private String barCode;
+
     private String code;
-    /**
-     * 膜皮名称
-     */
+
     private String name;
-    /**
-     * 膜皮单价
-     */
+
     private Float price;
-    /**
-     * 膜皮数量
-     */
+
     private Integer num;
-    /**
-     * 膜皮类型
-     */
+
     private String type;
-    /**
-     * 膜皮颜色
-     */
+
     private String color;
-    /**
-     * 计价方式
-     */
+
     private String units;
-    /**
-     * 供应商
-     */
+
     private String supplier;
+
+    private Float warning;
 
     private String company;
 
     private String spec;
+
+    private Float useRatio;
+
+    private Integer state;
 
     public Integer getId() {
         return id;
@@ -52,6 +37,14 @@ public class Membrane {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getBarCode() {
+        return barCode;
+    }
+
+    public void setBarCode(String barCode) {
+        this.barCode = barCode == null ? null : barCode.trim();
     }
 
     public String getCode() {
@@ -118,6 +111,14 @@ public class Membrane {
         this.supplier = supplier == null ? null : supplier.trim();
     }
 
+    public Float getWarning() {
+        return warning;
+    }
+
+    public void setWarning(Float warning) {
+        this.warning = warning;
+    }
+
     public String getCompany() {
         return company;
     }
@@ -132,5 +133,21 @@ public class Membrane {
 
     public void setSpec(String spec) {
         this.spec = spec == null ? null : spec.trim();
+    }
+
+    public Float getUseRatio() {
+        return useRatio;
+    }
+
+    public void setUseRatio(Float useRatio) {
+        this.useRatio = useRatio;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 }

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>员工信息</title>
+		<link rel="stylesheet" href="../frame/layui/css/layui.css" type="text/css">
+		<link rel="stylesheet" href="../frame/static/css/style.css">
+	</head>
+	<body>
+		<div class="layui-content">
+      		<h2>员工信息</h2>
+      		<button id="increase-btn" class="layui-btn mymx-btn" onclick="incBtn(this)" data-type="getCheckData">+新增员工</button>
+      		<div class="layui-table-body">
+        		<table class="layui-table mymx-table" lay-skin="line">
+        			<colgroup>
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+          			</colgroup>
+        		    <thead>
+         		        <tr>
+          		            <th>工号</th>
+          		            <th>姓名</th>
+          		            <th>性别</th>
+          		            <th>身份证号</th>
+             		        <th>电话</th>
+             		        <th>角色</th>
+          		            <th>所在工序</th>
+             		        <th>操作</th>
+          		        </tr> 
+        		    </thead>
+        		    <tbody>
+         		        <tr>
+          		            <td>5512456</td>
+           		            <td>张三</td>
+           		            <td>男</td>
+           		            <td>451245199006141365</td>
+             		        <td>13245678910</td>
+             		        <td>排产</td>
+          		            <td>排产</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactYg(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelYg()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>5512456</td>
+           		            <td>张三</td>
+           		            <td>男</td>
+           		            <td>451245199006141365</td>
+             		        <td>13245678910</td>
+             		        <td>排产</td>
+          		            <td>排产</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactYg(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelYg()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>5512456</td>
+           		            <td>张三</td>
+           		            <td>男</td>
+           		            <td>451245199006141365</td>
+             		        <td>13245678910</td>
+             		        <td>排产</td>
+          		            <td>排产</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactYg(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelYg()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>5512456</td>
+           		            <td>张三</td>
+           		            <td>男</td>
+           		            <td>451245199006141365</td>
+             		        <td>13245678910</td>
+             		        <td>排产</td>
+          		            <td>排产</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactYg(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelYg()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>5512456</td>
+           		            <td>张三</td>
+           		            <td>男</td>
+           		            <td>451245199006141365</td>
+             		        <td>13245678910</td>
+             		        <td>排产</td>
+          		            <td>排产</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactYg(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelYg()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>5512456</td>
+           		            <td>张三</td>
+           		            <td>男</td>
+           		            <td>451245199006141365</td>
+             		        <td>13245678910</td>
+             		        <td>排产</td>
+          		            <td>排产</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactYg(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelYg()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>5512456</td>
+           		            <td>张三</td>
+           		            <td>男</td>
+           		            <td>451245199006141365</td>
+             		        <td>13245678910</td>
+             		        <td>排产</td>
+          		            <td>排产</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactYg(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelYg()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>5512456</td>
+           		            <td>张三</td>
+           		            <td>男</td>
+           		            <td>451245199006141365</td>
+             		        <td>13245678910</td>
+             		        <td>排产</td>
+          		            <td>排产</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactYg(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelYg()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>5512456</td>
+           		            <td>张三</td>
+           		            <td>男</td>
+           		            <td>451245199006141365</td>
+             		        <td>13245678910</td>
+             		        <td>排产</td>
+          		            <td>排产</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactYg(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelYg()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>5512456</td>
+           		            <td>张三</td>
+           		            <td>男</td>
+           		            <td>451245199006141365</td>
+             		        <td>13245678910</td>
+             		        <td>排产</td>
+          		            <td>排产</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactYg(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelYg()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>5512456</td>
+           		            <td>张三</td>
+           		            <td>男</td>
+           		            <td>451245199006141365</td>
+             		        <td>13245678910</td>
+             		        <td>排产</td>
+          		            <td>排产</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactYg(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelYg()">删除</a></td>
+           		        </tr>
+          		    </tbody>
+        		</table>
+        </div>
+        <!--弹窗内容-->
+        <div id="RedactYg" style="display: none;">
+		 	<div style="padding: 20px;">
+				<form class="layui-form" action="">
+					<dl id="TCinsert">
+						<dd>
+							<label class="layui-form-label">工号</label>
+							<div class="layui-input-inline">
+								<input type="text" name="work-num" lay-verify="required" placeholder="请输入工号" autocomplete="off" class="layui-input gxgxgx">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">姓名</label>
+							<div class="layui-input-inline">
+								<input type="text" name="name" lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">性别</label>
+							<div class="layui-input-inline">
+        						<select name="modules" lay-verify="required" lay-search>
+         							<option value="man">男</option>
+         						    <option value="woman">女</option>
+                                </select>                                
+                        </div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">身份证号</label>
+							<div class="layui-input-inline">
+								<input type="text" name="id-num" lay-verify="required" placeholder="请输入身份证号" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">电话</label>
+							<div class="layui-input-inline">
+								<input type="text" name="tel" lay-verify="required" placeholder="请输入电话号码" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">角色</label>
+							<div class="layui-input-inline">
+        						<select name="modules" lay-verify="required" lay-search>
+         							<option value="role1">管理员</option>
+         						    <option value="role2">接单员</option>
+         						    <option value="role3">财务</option>
+         						    <option value="role4">仓管</option>
+         						    <option value="role5">排产</option>
+         						    <option value="role6">生产</option>
+                                </select>                                
+                            </div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">所在工序</label>
+							<div class="layui-input-inline">
+        						<select name="modules" lay-verify="required" lay-search>
+         							<option value="process1">工序1</option>
+         						    <option value="process2">工序2</option>
+         						    <option value="process3">工序3</option>
+         						    <option value="process4">工序4</option>
+         						    <option value="process5">工序5</option>
+         					 	    <option value="process6"工序6</option>
+                                </select>                                
+                            </div>
+						</dd>
+						
+						
+					</dl>					
+				</form>
+			</div>
+		</div>
+        
+        
+        
+    <script src="../frame/layui/layui.js"  charset="utf-8" type="text/javascript"></script>
+    <script src="../js/jquery-1.8.3.min.js"></script>  	
+    <script type="text/javascript">
+        layui.use('layer', function(){
+                var layer = layui.layer;  
+//              layer.msg('hello');
+            });    
+         
+        function incBtn(obj){
+//      	var tmp = obj;
+			var gymc = $(obj).parents("tr").children().eq(1).text();
+		    var gyname = $(obj).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['606px', 'auto'],//边框大小
+	            title:'新增账号',
+	            shade:0.2,
+	            offset:'200px',//距离顶部距离
+	            content:$('#RedactYg').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	              parent.layer.close(index);
+	         	}
+	     });          	                	
+        } 
+         
+         
+         
+        function RedactYg(obj){
+//      	var tmp = obj;
+			var gymc = $(obj).parents("tr").children().eq(1).text();
+		    var gyname = $(obj).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['606px', 'auto'],//边框大小
+	            title:'编辑员工信息',
+	            shade:0.2,
+	            offset:'240px',//距离顶部距离
+	            content:$('#RedactYg').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	              parent.layer.close(index);
+	         	}
+	        });          	                	
+        }
+        
+      	function DelYg() {
+      		
+      		
+			parent.layer.open({
+	            type:1,	         
+	            title:'删除员工信息',
+	            shade:0.2,
+	            offset:'300px',
+	            content:'<div style="padding: 30px 100px;">确定删除该员工信息吗？</div>',
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+	              parent.layer.close(index);
+	         	}
+	     	});  
+		}
+      	
+    </script>  
+        
+        
+	</body>
+</html>

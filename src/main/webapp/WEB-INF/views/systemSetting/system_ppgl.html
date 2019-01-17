@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>品牌管理</title>
+		<link rel="stylesheet" href="../frame/layui/css/layui.css" type="text/css">
+		<link rel="stylesheet" href="../frame/static/css/style.css">
+	</head>
+	<body>
+		<div class="layui-content">
+      		<h2>品牌管理</h2>
+      		<button id="increase-btn" class="layui-btn mymx-btn" data-type="getCheckData" onclick="incBtn(this)">+新增品牌</button>
+      		<div class="layui-table-body">
+        		<table class="layui-table my-table-ppgl" lay-skin="line">
+        			<colgroup>
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+          			</colgroup>
+        		    <thead>
+         		        <tr>
+          		            <th>序号</th>
+          		            <th>品牌名称</th>
+             		        <th>logo</th>
+             		        <th>操作</th>
+          		        </tr> 
+        		    </thead>
+        		    <tbody>
+         		        <tr>
+          		            <td>01</td>
+           		            <td>系列1</td>
+             		        <td><img src="../img/system_ppgl/logo1.png"/></td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactPp(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delPp()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>02</td>
+           		            <td>系列1</td>
+             		        <td><img src="../img/system_ppgl/logo1.png"/></td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactPp(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delPp()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>03</td>
+           		            <td>系列1</td>
+             		        <td><img src="../img/system_ppgl/logo1.png"/></td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactPp(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delPp()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>04</td>
+           		            <td>系列1</td>
+             		        <td><img src="../img/system_ppgl/logo1.png"/></td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactPp(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delPp()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>05</td>
+           		            <td>系列1</td>
+             		        <td><img src="../img/system_ppgl/logo1.png"/></td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactPp(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delPp()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>06</td>
+           		            <td>系列1</td>
+             		        <td><img src="../img/system_ppgl/logo1.png"/></td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactPp(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delPp()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>07</td>
+           		            <td>系列1</td>
+             		        <td><img src="../img/system_ppgl/logo1.png"/></td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="redactPp(this)">编辑</a><a href="#" style="color: #546df2;" onclick="delPp()">删除</a></td>
+           		        </tr>
+          		    </tbody>
+        		</table>
+        	</div>
+        </div>
+      	
+        <!--弹出层-->
+      	<div id="incPp" style="display: none;">
+		 	<div style="padding: 20px;">
+				<form class="layui-form" action="">
+					<dl id="TCinsert">
+						<dl id="TCinsert">
+						<dd>
+							<div class="layui-form-logo">
+							<label class="layui-form-label">品牌logo</label>
+							<div class="layui-upload">                               
+                                <div class="layui-upload-list">
+                                    <img class="layui-upload-img my-upload-img" id="demo1"> 
+                                    <p id="demoText"></p>
+                                </div>
+                                <a id="uploadPp" style="cursor: pointer;">上传图片</a>
+                            </div>   						
+                            </div>           
+						</dd>
+						<dd>
+							<label class="layui-form-label">品牌名称</label>
+							<div class="layui-input-inline">
+								<input type="text" name="brand" lay-verify="required" placeholder="请输入门型系列名称" autocomplete="off" class="layui-input gxgxgx">
+							</div>							
+						</dd>
+					</dl>
+					</dl>
+				</form>	
+			</div>	
+      	</div>
+      	
+      	
+      	<script src="../frame/layui/layui.js"  charset="utf-8" type="text/javascript"></script>
+        <script src="../js/jquery-1.8.3.min.js"></script>
+        <!--<script src="../frame/layui/lay/modules/layer.js"></script>-->
+        <script type="text/javascript">
+       	    layui.use('layer', function(){
+                var layer = layui.layer;  
+//              layer.msg('hello');
+            });     
+       	       
+//     	    layui.use('upload', function(){
+//          var $ = layui.jquery
+//          ,upload = layui.upload;
+//
+//          //普通图片上传
+//          var uploadInst = upload.render({
+//          elem: '#uploadPp'
+//              ,url: '/upload/'
+//              ,before: function(obj){
+//                  //预读本地文件示例，不支持ie8
+//                  obj.preview(function(index, file, result){
+//                      $('#demo1').attr('src', result); //图片链接（base64）
+//                  });
+//              }
+//          ,done: function(res){
+//              //如果上传失败
+//              if(res.code > 0){
+//                  return layer.msg('上传失败');
+//              }
+//              //上传成功
+//          }
+//          ,error: function(){
+//              //演示失败状态，并实现重传
+//              var demoText = $('#demoText');
+//              demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+//              demoText.find('.demo-reload').on('click', function(){
+//                  uploadInst.upload();
+//          });
+//          }
+//          });
+//      });
+   
+       	       
+        function incBtn(obj){
+//      	var tmp = obj;
+			var gymc = $(obj).parents("tr").children().eq(1).text();
+		    var gyname = $(obj).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['354px', 'auto'],//边框大小
+	            title:'新增品牌',
+	            shade:0.2,
+	            offset:'300px',//距离顶部距离
+	            content:$('#incPp').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	              parent.layer.close(index);
+	         	}
+	     });          	                	
+        }
+        
+         function redactPp(obj){
+        	var tmp = obj;
+			var gymc = $(tmp).parents("tr").children().eq(1).text();
+		    var gyname = $(tmp).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['326px', 'auto'],//边框大小
+	            title:'编辑品牌',
+	            shade:0.2,
+	            offset:'300px',//距离顶部距离
+	            content:$('#incPp').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	              parent.layer.close(index);
+	         	}
+	        });          	                	
+        }
+        
+        function delPp() {     		
+			parent.layer.open({
+	            type:1,	         
+	            title:'删除品牌',
+	            shade:0.2,
+	            offset:'300px',
+	            content:'<div style="padding: 30px 100px;">确定删除该品牌吗？</div>',
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+	              parent.layer.close(index);
+	         	}
+	     	});  
+		}
+        
+  
+        </script>
+        
+        	
+	</body>
+</html>

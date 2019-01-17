@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @author zph2
- */
 public class ProductionExample {
     protected String orderByClause;
 

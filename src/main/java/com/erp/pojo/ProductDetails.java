@@ -1,121 +1,60 @@
 package com.erp.pojo;
 
-/**
- * 产品明细表
- * @author zph2
- */
 public class ProductDetails {
-    /**
-     *产品明细ID
-     */
     private Integer id;
-    /**
-     *DDID
-     */
+
     private Integer ddid;
-    /**
-     *产品ID
-     */
+
     private Integer productId;
-    /**
-     *条码编号
-     */
+
     private String barCode;
-    /**
-     *订单编号
-     */
+
     private String orderCode;
-    /**
-     *打包号
-     */
+
     private Integer packageNumber;
-    /**
-     *宽
-     */
+
     private Float width;
-    /**
-     *高
-     */
+
     private Float height;
-    /**
-     *基材
-     */
+
     private String board;
-    /**
-     *工艺
-     */
+
     private String craft;
-    /**
-     *门型
-     */
+
     private String doorType;
-    /**
-     *边型
-     */
+
     private String edgeShape;
-    /**
-     *门型配件
-     */
+
     private String doorTypeParts;
-    /**
-     *门型配件数量
-     */
+
     private Integer doorTypePartsNum;
-    /**
-     *单双面
-     */
+
     private String face;
-    /**
-     *配件
-     */
+
     private String parts;
-    /**
-     *配件数量
-     */
+
     private Integer partsNumber;
-    /**
-     *纹理
-     */
+
     private String texture;
-    /**
-     *数量
-     */
+
     private Integer num;
-    /**
-     *颜色
-     */
+
     private String productColor;
-    /**
-     *开向
-     */
+
     private String open;
-    /**
-     *产品备注
-     */
+
     private String remark;
-    /**
-     *v1
-     */
+
     private Float v1;
-    /**
-     *v2
-     */
+
     private Float v2;
-    /**
-     *v3
-     */
+
     private Float v3;
-    /**
-     *下道工序
-     */
+
     private String nextStep;
-    /**
-     *扫描状态
-     */
+
     private String state;
-    /**
-     *门板名称
-     */
+
     private String doorTypeName;
 
     public Integer getId() {

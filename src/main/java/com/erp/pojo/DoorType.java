@@ -1,58 +1,31 @@
 package com.erp.pojo;
 
-/**
- * 门型
- * @author zph2
- */
 public class DoorType {
-    /**
-     * 门型ID
-     */
     private Integer id;
-    /**
-     * 门型编号
-     */
+
     private String code;
-    /**
-     * 门型名称
-     */
+
     private String name;
-    /**
-     * 门型单价
-     */
+
     private Float price;
-    /**
-     * 门型数量
-     */
+
     private Integer num;
-    /**
-     * 最大宽度(mm)
-     */
+
     private Float maxWidth;
-    /**
-     * 最小宽度(mm)
-     */
+
     private Float minWidth;
-    /**
-     * 最大高度(mm)
-     */
+
     private Float maxHeight;
-    /**
-     * 最小高度(mm)
-     */
+
     private Float minHeight;
-    /**
-     * 计价单位
-     */
+
     private String units;
-    /**
-     * 门型分类ID
-     */
+
     private Integer classifyId;
-    /**
-     * 门型系列ID
-     */
+
     private Integer seriesId;
+
+    private Integer state;
 
     public Integer getId() {
         return id;
@@ -148,5 +121,13 @@ public class DoorType {
 
     public void setSeriesId(Integer seriesId) {
         this.seriesId = seriesId;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 }

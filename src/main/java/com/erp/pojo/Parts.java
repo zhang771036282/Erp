@@ -1,46 +1,27 @@
 package com.erp.pojo;
 
-/**
- * 配件
- * @author zph2
- */
 public class Parts {
-    /**
-     *配件ID
-     */
     private Integer id;
-    /**
-     *配件名称
-     */
+
     private String name;
-    /**
-     *配件分类
-     */
+
     private String type;
-    /**
-     *配件规格
-     */
+
     private String spec;
-    /**
-     *配件数量
-     */
+
     private Integer num;
-    /**
-     *配件编号
-     */
+
     private String code;
-    /**
-     *配件单价
-     */
+
     private Float price;
-    /**
-     *计价方式
-     */
+
     private String valuationMethod;
-    /**
-     *供货商
-     */
+
     private String supplier;
+
+    private Float warning;
+
+    private Integer state;
 
     public Integer getId() {
         return id;
@@ -112,5 +93,21 @@ public class Parts {
 
     public void setSupplier(String supplier) {
         this.supplier = supplier == null ? null : supplier.trim();
+    }
+
+    public Float getWarning() {
+        return warning;
+    }
+
+    public void setWarning(Float warning) {
+        this.warning = warning;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 }

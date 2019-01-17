@@ -5,9 +5,6 @@ import com.erp.pojo.LevelExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-/**
- * @author zph2
- */
 public interface LevelMapper {
     int countByExample(LevelExample example);
 

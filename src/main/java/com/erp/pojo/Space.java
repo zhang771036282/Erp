@@ -1,29 +1,14 @@
 package com.erp.pojo;
 
-/**
- * 仓位
- * @author zph2
- */
 public class Space {
-    /**
-     *仓位ID
-     */
     private Integer id;
-    /**
-     *仓位编号
-     */
+
     private String spaceCode;
-    /**
-     *仓位状态(0.空 1.未空)
-     */
+
     private Integer state;
-    /**
-     *仓位容量（成品装一个订单，其他的根据材料定）
-     */
+
     private Float num;
-    /**
-     *货物编号
-     */
+
     private String code;
 
     public Integer getId() {

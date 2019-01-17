@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>经销商账号</title>
+		<link rel="stylesheet" href="../frame/layui/css/layui.css" type="text/css">
+		<link rel="stylesheet" href="../frame/static/css/style.css">
+	</head>
+	<body>
+		<div class="layui-content">
+      		<h2>经销商账号</h2>
+      		<button id="increase-btn" class="layui-btn mymx-btn" onclick="incBtn(this)" data-type="getCheckData">+新增账号</button>
+      		<div class="layui-table-body">
+        		<table class="layui-table mymx-table" lay-skin="line">
+        			<colgroup>
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+          			</colgroup>
+        		    <thead>
+         		        <tr>
+          		            <th>编号</th>
+          		            <th>账户ID</th>
+          		            <th>用户名</th>
+             		        <th>密码</th>
+             		        <th>所属经销商</th>
+          		            <th>状态</th>
+             		        <th>操作</th>
+          		        </tr> 
+        		    </thead>
+        		    <tbody>
+         		        <tr>
+          		            <td>01</td>
+          		            <td>256332214</td>
+           		            <td>某某门店</td>
+             		        <td>123456</td>
+             		        <td>经销商1</td>
+          		            <td>正常</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactZh(this)">编辑</a><a href="#" style="margin-right: 10px;" id="FreezeZh" class="FreezeZh"  res="0">冻结账户</a><a href="#" style="color: #546df2;" onclick="DelZh()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>02</td>
+          		            <td>256332214</td>
+           		            <td>某某门店</td>
+             		        <td>123456</td>
+             		        <td>经销商1</td>
+          		            <td>冻结</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactZh(this)">编辑</a><a href="#" style="margin-right: 10px;" id="UnfreezeZh" class="UnfreezeZh"  res="0">解冻账户</a><a href="#" style="color: #546df2;" onclick="DelZh()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>03</td>
+          		            <td>256332214</td>
+           		            <td>某某门店</td>
+             		        <td>123456</td>
+             		        <td>经销商1</td>
+          		            <td>正常</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactZh(this)">编辑</a><a href="#" style="margin-right: 10px;" id="FreezeZh" class="FreezeZh" res="0">冻结账户</a><a href="#" style="color: #546df2;" onclick="DelZh()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>04</td>
+          		            <td>256332214</td>
+           		            <td>某某门店</td>
+             		        <td>123456</td>
+             		        <td>经销商1</td>
+          		            <td>正常</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactZh(this)">编辑</a><a href="#" style="margin-right: 10px;" id="FreezeZh" class="FreezeZh" res="0">冻结账户</a><a href="#" style="color: #546df2;" onclick="DelZh()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>05</td>
+          		            <td>256332214</td>
+           		            <td>某某门店</td>
+             		        <td>123456</td>
+             		        <td>经销商1</td>
+          		            <td>正常</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactZh(this)">编辑</a><a href="#" style="margin-right: 10px;" id="FreezeZh" class="FreezeZh" res="0">冻结账户</a><a href="#" style="color: #546df2;" onclick="DelZh()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>06</td>
+          		            <td>256332214</td>
+           		            <td>某某门店</td>
+             		        <td>123456</td>
+             		        <td>经销商1</td>
+          		            <td>正常</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactZh(this)">编辑</a><a href="#" style="margin-right: 10px;" id="FreezeZh" class="FreezeZh" res="0">冻结账户</a><a href="#" style="color: #546df2;" onclick="DelZh()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>07</td>
+          		            <td>256332214</td>
+           		            <td>某某门店</td>
+             		        <td>123456</td>
+             		        <td>经销商1</td>
+          		            <td>正常</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactZh(this)">编辑</a><a href="#" style="margin-right: 10px;" id="FreezeZh" class="FreezeZh" res="0">冻结账户</a><a href="#" style="color: #546df2;" onclick="DelZh()">删除</a></td>
+           		        </tr>
+          		    </tbody>
+        		</table>
+        </div>
+        <!--弹出层-->
+        <div id="incZh" style="display: none;">
+		 	<div style="padding: 20px;">
+				<form class="layui-form" action="">
+					<dl id="TCinsert" class="my-TCinsert-Dj">
+						<dd>
+							<label class="layui-form-label">账户ID</label>
+							<span style="line-height: 30px;">256332214</span>
+						</dd>
+						<dd>
+							<label class="layui-form-label">用户名</label>
+							<div class="layui-input-inline">
+								<input type="text" name="name" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">密码</label>
+							<div class="layui-input-inline">
+								<input type="password" name="password" lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input gygygy">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">状态</label>
+							<div class="layui-input-inline">
+        						<select name="modules" lay-verify="required" lay-search>
+         							<option value="state1">正常</option>
+         						    <option value="state2">冻结</option>
+                               </select>  
+						</dd>												
+					</dl>					
+				</form>
+			</div>
+		</div>
+        
+        
+       <script src="../frame/layui/layui.js"  charset="utf-8" type="text/javascript"></script>
+       <script src="../js/jquery-1.8.3.min.js"></script>
+       <!--<script src="../frame/layui/lay/modules/layer.js"></script>-->
+       <script type="text/javascript">
+       	    layui.use('layer', function(){
+                var layer = layui.layer;  
+//              layer.msg('hello');
+            });     
+       	       	
+        function incBtn(obj){
+//      	var tmp = obj;
+			var gymc = $(obj).parents("tr").children().eq(1).text();
+		    var gyname = $(obj).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['342px', 'auto'],//边框大小
+	            title:'新增账号',
+	            shade:0.2,
+	            offset:'200px',//距离顶部距离
+	            content:$('#incZh').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	                parent.layer.close(index);
+	         	}
+	     });          	                	
+        }
+
+        function RedactZh(obj){
+        	var tmp = obj;
+			var gymc = $(tmp).parents("tr").children().eq(1).text();
+		    var gyname = $(tmp).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['342px', 'auto'],//边框大小
+	            title:'编辑账号',
+	            shade:0.2,
+	            offset:'200px',//距离顶部距离
+	            content:$('#incZh').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	                parent.layer.close(index);
+	         	}
+	     });          	                	
+        }
+
+        function DelZh() {      		      		
+			parent.layer.open({
+	            type:1,	         
+	            title:'删除账号',
+	            shade:0.2,
+	            offset:'300px',
+	            content:'<div style="padding: 30px 100px;">确定删除该账号吗？</div>',
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+	                parent.layer.close(index);
+	         	}
+	     	});  
+		}
+
+        $('.FreezeZh').on('click',function(){
+            var  i=$(this).attr("res");
+            if(i==0){
+                $(this).attr("res","1"); 
+                $(this).html("");
+                $(this).html("解冻账户");
+                $(this).css("color","#ff961a");               
+            }else{
+                $(this).attr("res","0");
+                $(this).html("");
+                $(this).html("冻结账户");
+                $(this).css("color","#546df2");  
+            }
+        });
+        $('.UnfreezeZh').on('click',function(){
+            var  i=$(this).attr("res");
+            if(i==0){
+                $(this).attr("res","1"); 
+                $(this).html("");
+                $(this).html("冻结账户");
+                $(this).css("color","#546df2");               
+            }else{
+                $(this).attr("res","0");
+                $(this).html("");
+                $(this).html("解冻账户");
+                $(this).css("color","#ff961a"); 
+            }
+        });
+
+
+
+        </script>
+        
+	</body>
+</html>

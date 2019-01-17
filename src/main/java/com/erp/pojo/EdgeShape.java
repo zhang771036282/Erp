@@ -1,33 +1,16 @@
 package com.erp.pojo;
 
-/**
- * 边型
- * @author zph2
- */
 public class EdgeShape {
-    /**
-     * 边型ID
-     */
     private Integer id;
-    /**
-     * 边型编号
-     */
+
     private String code;
-    /**
-     * 边型名称
-     */
+
     private String name;
-    /**
-     * 边型单价
-     */
+
     private Float price;
-    /**
-     * 边型数量
-     */
+
     private Integer num;
-    /**
-     * 计价方式
-     */
+
     private String units;
 
     public Integer getId() {

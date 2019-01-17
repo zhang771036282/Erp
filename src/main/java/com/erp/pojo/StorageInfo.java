@@ -2,42 +2,21 @@ package com.erp.pojo;
 
 import java.util.Date;
 
-/**
- * 出入库明细
- * @author zph2
- */
 public class StorageInfo {
-    /**
-     *出入库ID
-     */
     private Integer id;
-    /**
-     *出入库名称
-     */
+
     private String name;
-    /**
-     *出入库数量
-     */
+
     private Integer num;
-    /**
-     *出入库人
-     */
+
     private String operator;
-    /**
-     *出入库时间
-     */
+
     private Date time;
-    /**
-     *出入库编号
-     */
+
     private String code;
-    /**
-     *货物编号
-     */
+
     private String cargoCode;
-    /**
-     *出入库类型 （1 原材料 2 半成品 3 成品）
-     */
+
     private String type;
 
     public Integer getId() {

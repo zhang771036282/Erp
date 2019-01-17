@@ -1,21 +1,10 @@
 package com.erp.pojo;
 
-/**
- * 工位
- * @author zph2
- */
 public class Station {
-    /**
-     *工位ID
-     */
     private Integer id;
-    /**
-     *工位名称
-     */
+
     private String name;
-    /**
-     *优先级
-     */
+
     private Integer priority;
 
     public Integer getId() {

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>配件设置</title>
+		<link rel="stylesheet" href="../frame/layui/css/layui.css" type="text/css">
+		<link rel="stylesheet" href="../frame/static/css/style.css">
+	</head>
+	<body>
+		<div class="layui-content">
+      		<h2>配件设置</h2>
+      		<button id="increase-btn" class="layui-btn mymx-btn" onclick="incBtn(this)" data-type="getCheckData">+新增配件</button>
+      		<div class="layui-table-body">
+        		<table class="layui-table mymx-table" lay-skin="line">
+        			<colgroup>
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+           			    <col width="100">
+          			</colgroup>
+        		    <thead>
+         		        <tr>
+          		            <th>配件编号</th>
+          		            <th>配件名称</th>
+             		        <th>配件规格</th>
+             		        <th>配件单位</th>
+             		        <th>配件分类</th>
+          		            <th>配件单价(元)</th>
+             		        <th>计价方式</th>
+             		        <th>库存预警</th>
+          		            <th>状态</th>
+             		        <th>供货商</th>
+             		        <th>操作</th>
+          		        </tr> 
+        		    </thead>
+        		    <tbody>
+         		        <tr>
+          		            <td>551245656565</td>
+           		            <td>线条</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+             		        <td>分类1</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>
+             		        <td>10</td>
+          		            <td>状态1</td>
+             		        <td>吉夫森1010</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelPj()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>线条</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+             		        <td>分类1</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>
+             		        <td>10</td>
+          		            <td>状态1</td>
+             		        <td>吉夫森1010</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelPj()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>线条</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+             		        <td>分类1</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>
+             		        <td>10</td>
+          		            <td>状态1</td>
+             		        <td>吉夫森1010</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelPj()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>线条</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+             		        <td>分类1</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>
+             		        <td>10</td>
+          		            <td>状态1</td>
+             		        <td>吉夫森1010</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelPj()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>线条</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+             		        <td>分类1</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>
+             		        <td>10</td>
+          		            <td>状态1</td>
+             		        <td>吉夫森1010</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelPj()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>线条</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+             		        <td>分类1</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>
+             		        <td>10</td>
+          		            <td>状态1</td>
+             		        <td>吉夫森1010</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelPj()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>线条</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+             		        <td>分类1</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>
+             		        <td>10</td>
+          		            <td>状态1</td>
+             		        <td>吉夫森1010</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelPj()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>线条</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+             		        <td>分类1</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>
+             		        <td>10</td>
+          		            <td>状态1</td>
+             		        <td>吉夫森1010</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelPj()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>线条</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+             		        <td>分类1</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>
+             		        <td>10</td>
+          		            <td>状态1</td>
+             		        <td>吉夫森1010</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelPj()">删除</a></td>
+           		        </tr>
+           		        <tr>
+          		            <td>551245656565</td>
+           		            <td>线条</td>
+             		        <td>规格1</td>
+             		        <td>米</td>
+             		        <td>分类1</td>
+          		            <td>50.00</td>
+             		        <td>计价方式1</td>
+             		        <td>10</td>
+          		            <td>状态1</td>
+             		        <td>吉夫森1010</td>
+             		        <td><a href="#" style="color: #546df2;margin-right: 10px;" onclick="RedactPj(this)">编辑</a><a href="#" style="color: #546df2;" onclick="DelPj()">删除</a></td>
+           		        </tr>
+          		    </tbody>
+        		</table>
+        </div>
+        <!--弹出层-->
+        <div id="incPj" style="display: none;">
+		 	<div style="padding: 20px;">
+				<form class="layui-form" action="">
+					<dl id="TCinsert">
+						<dd>
+							<label class="layui-form-label">配件编号</label>
+							<div class="layui-input-inline">
+								<input type="text" name="num" lay-verify="required" placeholder="请输入编号" autocomplete="off" class="layui-input gxgxgx">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">配件名称</label>
+							<div class="layui-input-inline">
+								<input type="text" name="name" lay-verify="required" placeholder="请输入名称" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">配件规格</label>
+							<div class="layui-input-inline">
+								<input type="text" name="size" lay-verify="required" placeholder="请输入规格" autocomplete="off" class="layui-input gygygy">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">配件单位</label>
+							<div class="layui-input-inline">
+								<input type="text" name="unit" lay-verify="required" placeholder="请输入单位" autocomplete="off" class="layui-input gxgxgx">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">配件分类</label>
+							<div class="layui-input-inline">
+								<input type="text" name="sort" lay-verify="required" placeholder="请输入单位" autocomplete="off" class="layui-input gxgxgx">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">配件单价</label>
+							<div class="layui-input-inline">
+								<input type="text" name="unit-price" lay-verify="required" placeholder="请输入单价" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">计价方式</label>							
+							<div class="layui-input-inline">
+        						<select name="modules" lay-verify="required" lay-search>
+         							<option value="valuation-methods1">计价方式1</option>
+         						    <option value="valuation-methods2">计价方式2</option>
+         						    <option value="valuation-methods3">计价方式3</option>
+         						    <option value="valuation-methods4">计价方式4</option>
+         						    <option value="valuation-methods5">计价方式5</option>
+                               </select>                                
+                            </div>
+						</dd>						
+						<dd>
+							<label class="layui-form-label">库存预警</label>
+							<div class="layui-input-inline">
+								<input type="text" name="warning" lay-verify="required" placeholder="请输入库存数量" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+						<dd>
+							<label class="layui-form-label">状态</label>
+							<div class="layui-input-inline">
+								<input type="text" name="state" lay-verify="required" placeholder="请输入预警值" autocomplete="off" class="layui-input qymc team">
+							</div>
+						</dd>
+					</dl>					
+				</form>
+			</div>
+		</div>
+        
+        
+       <script src="../frame/layui/layui.js"  charset="utf-8" type="text/javascript"></script>
+       <script src="../js/jquery-1.8.3.min.js"></script>
+       <!--<script src="../frame/layui/lay/modules/layer.js"></script>-->
+       <script type="text/javascript">
+       	    layui.use('layer', function(){
+                var layer = layui.layer;  
+//              layer.msg('hello');
+            });     
+       	       	
+        function incBtn(obj){
+//      	var tmp = obj;
+			var gymc = $(obj).parents("tr").children().eq(1).text();
+		    var gyname = $(obj).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['606px', 'auto'],//边框大小
+	            title:'新增配件',
+	            shade:0.2,
+	            offset:'200px',//距离顶部距离
+	            content:$('#incPj').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	              parent.layer.close(index);
+	         	}
+	     });          	                	
+        }
+
+        function RedactPj(obj){
+        	var tmp = obj;
+			var gymc = $(tmp).parents("tr").children().eq(1).text();
+		    var gyname = $(tmp).parents("tr").children().eq(1).text();
+		    
+			parent.layer.open({
+	            type:1,
+	            area: ['606px', 'auto'],//边框大小
+	            title:'编辑配件',
+	            shade:0.2,
+	            offset:'200px',//距离顶部距离
+	            content:$('#incPj').html(),
+	            success:function(){
+	            	$(".gygygy").val(gyname);
+	            	
+	            },
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+//	            	alert($(".gxmc").val());
+	              parent.layer.close(index);
+	         	}
+	     });          	                	
+        }
+
+        function DelPj() {
+      		
+      		
+			parent.layer.open({
+	            type:1,	         
+	            title:'删除配件',
+	            shade:0.2,
+	            offset:'300px',
+	            content:'<div style="padding: 30px 100px;">确定删除该配件吗？</div>',
+	            btn:['确定','取消']
+	            ,btnAlign: 'c' //按钮居中
+	            ,yes: function(index,layero){
+	              parent.layer.close(index);
+	         	}
+	     	});  
+		}
+
+
+        </script>
+        
+	</body>
+</html>

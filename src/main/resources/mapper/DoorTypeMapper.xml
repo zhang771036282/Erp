@@ -14,6 +14,7 @@
     <result column="units" property="units" jdbcType="VARCHAR" />
     <result column="classify_id" property="classifyId" jdbcType="INTEGER" />
     <result column="series_id" property="seriesId" jdbcType="INTEGER" />
+    <result column="state" property="state" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -75,7 +76,7 @@
   </sql>
   <sql id="Base_Column_List" >
     id, code, name, price, num, max_width, min_width, max_height, min_height, units, 
-    classify_id, series_id
+    classify_id, series_id, state
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.erp.pojo.DoorTypeExample" >
     select
@@ -111,11 +112,13 @@
     insert into door_type (id, code, name, 
       price, num, max_width, min_width, 
       max_height, min_height, units, 
-      classify_id, series_id)
+      classify_id, series_id, state
+      )
     values (#{id,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
       #{price,jdbcType=REAL}, #{num,jdbcType=INTEGER}, #{maxWidth,jdbcType=REAL}, #{minWidth,jdbcType=REAL}, 
       #{maxHeight,jdbcType=REAL}, #{minHeight,jdbcType=REAL}, #{units,jdbcType=VARCHAR}, 
-      #{classifyId,jdbcType=INTEGER}, #{seriesId,jdbcType=INTEGER})
+      #{classifyId,jdbcType=INTEGER}, #{seriesId,jdbcType=INTEGER}, #{state,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.erp.pojo.DoorType" >
     insert into door_type
@@ -156,6 +159,9 @@
       <if test="seriesId != null" >
         series_id,
       </if>
+      <if test="state != null" >
+        state,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -193,6 +199,9 @@
       </if>
       <if test="seriesId != null" >
         #{seriesId,jdbcType=INTEGER},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -241,6 +250,9 @@
       <if test="record.seriesId != null" >
         series_id = #{record.seriesId,jdbcType=INTEGER},
       </if>
+      <if test="record.state != null" >
+        state = #{record.state,jdbcType=INTEGER},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -259,7 +271,8 @@
       min_height = #{record.minHeight,jdbcType=REAL},
       units = #{record.units,jdbcType=VARCHAR},
       classify_id = #{record.classifyId,jdbcType=INTEGER},
-      series_id = #{record.seriesId,jdbcType=INTEGER}
+      series_id = #{record.seriesId,jdbcType=INTEGER},
+      state = #{record.state,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -300,6 +313,9 @@
       <if test="seriesId != null" >
         series_id = #{seriesId,jdbcType=INTEGER},
       </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -315,7 +331,8 @@
       min_height = #{minHeight,jdbcType=REAL},
       units = #{units,jdbcType=VARCHAR},
       classify_id = #{classifyId,jdbcType=INTEGER},
-      series_id = #{seriesId,jdbcType=INTEGER}
+      series_id = #{seriesId,jdbcType=INTEGER},
+      state = #{state,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

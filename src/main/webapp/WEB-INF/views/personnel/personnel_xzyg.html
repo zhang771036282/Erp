@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>新增员工</title>
+		<link rel="stylesheet" href="../frame/layui/css/layui.css" type="text/css">
+		<link rel="stylesheet" href="../frame/static/css/style.css">
+	</head>
+	<body>
+		<div class="layui-content">
+      		<h2>新增员工</h2>
+      		<div class="layui-content-main">
+      			<div class="layui-form-item">
+         			<div class="layui-inline">
+          			  <label class="layui-form-label">工号</label>
+          			  <div class="layui-input-inline">
+          			    <input type="text" name="work-num" class="layui-input" placeholder="请输入工号">
+          			  </div>
+        			</div>        			
+        		</div>
+      		    <div class="layui-form-item">
+         			<div class="layui-inline">
+          			  <label class="layui-form-label">姓名</label>
+          			  <div class="layui-input-inline">
+          			    <input type="text" name="name" class="layui-input" placeholder="请输入姓名">
+          			  </div>
+        			</div>
+        		</div>
+        		<div class="layui-form-item">
+         			<div class="layui-inline">
+          			    <label class="layui-form-label">性别</label>
+          			    <div class="layui-input-inline">
+        						<select name="modules" lay-verify="required" lay-search>
+         							<option value="man">男</option>
+         						    <option value="woman">女</option>
+                                </select>                                
+                        </div>
+        			</div>
+        		</div>
+        		<div class="layui-form-item">
+         			<div class="layui-inline">
+          			  <label class="layui-form-label">身份证号</label>
+          			  <div class="layui-input-inline">
+          			    <input type="text" name="id-num" class="layui-input" placeholder="请输入身份证号">
+          			  </div>
+        			</div>
+        		</div>
+        		<div class="layui-form-item">
+         			<div class="layui-inline">
+          			  <label class="layui-form-label">电话</label>
+          			  <div class="layui-input-inline">
+          			    <input type="text" name="tel" class="layui-input" placeholder="请输入电话号码">
+          			  </div>
+        			</div>
+        		</div>
+        		<div class="layui-form-item">
+         			<div class="layui-inline">
+          			    <label class="layui-form-label">角色</label>
+          			    <div class="layui-input-inline">
+        						<select name="modules" lay-verify="required" lay-search>
+         							<option value="role1">管理员</option>
+         						    <option value="role2">接单员</option>
+         						    <option value="role3">财务</option>
+         						    <option value="role4">仓管</option>
+         						    <option value="role5">排产</option>
+         						    <option value="role6">生产</option>
+                                </select>                                
+                        </div>
+        			</div>
+        		</div>
+        		<div class="layui-form-item">
+         			<div class="layui-inline">
+          			    <label class="layui-form-label">所在工序</label>
+          			    <div class="layui-input-inline">
+        						<select name="modules" lay-verify="required" lay-search>
+         							<option value="process1">工序1</option>
+         						    <option value="process2">工序2</option>
+         						    <option value="process3">工序3</option>
+         						    <option value="process4">工序4</option>
+         						    <option value="process5">工序5</option>
+         						    <option value="process6"工序6</option>
+                                </select>                                
+                        </div>
+        			</div>
+        		</div>
+        		<button class="layui-btn" data-type="getCheckData" style="padding: 0 24px;">确&nbsp;定</button>
+      		</div>	      		
+      	</div>
+	</body>
+</html>

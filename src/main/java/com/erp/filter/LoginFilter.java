@@ -25,7 +25,8 @@ public class LoginFilter implements Filter {
 
         Employee employee = (Employee) rq.getSession().getAttribute("employee");
         if(employee == null){
-            rs.sendRedirect("/login.html"); // 重定向登录页面
+            // 重定向登录页面
+            rs.sendRedirect("/login.html");
             return;
         }
 

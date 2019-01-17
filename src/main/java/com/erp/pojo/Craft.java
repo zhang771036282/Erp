@@ -1,17 +1,8 @@
 package com.erp.pojo;
 
-/**
- * 工艺
- * @author zph2
- */
 public class Craft {
-    /**
-     * 工艺ID
-     */
     private Integer id;
-    /**
-     * 工艺名称
-     */
+
     private String name;
 
     public Integer getId() {

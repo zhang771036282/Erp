@@ -1,5 +1,8 @@
 package com.erp.utils;
 
+/**
+ * @author zph2
+ */
 public class AjaxResult {
 
 	private boolean success;

@@ -5,9 +5,6 @@ import com.erp.pojo.PartsExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-/**
- * @author zph2
- */
 public interface PartsMapper {
     int countByExample(PartsExample example);
 

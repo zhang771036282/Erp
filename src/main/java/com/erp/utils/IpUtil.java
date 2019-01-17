@@ -14,7 +14,7 @@ public class IpUtil {
 
     public final static String ERROR_IP = "127.0.0.1";
 
-    public final static Pattern pattern = Pattern.
+    public final static Pattern PATTERN = Pattern.
             compile("(2[5][0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})\\.(25[0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})\\.(25[0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})\\.(25[0-5]|2[0-4]\\d|1\\d{2}|\\d{1,2})");
 
     /**
@@ -105,7 +105,7 @@ public class IpUtil {
             return false;
         }
 
-        Matcher matcher = pattern.matcher(ip);
+        Matcher matcher = PATTERN.matcher(ip);
         boolean isValid = matcher.matches();
         log.debug("valid ip:" + ip + " result is: " + isValid);
         return isValid;

@@ -2,26 +2,13 @@ package com.erp.pojo;
 
 import java.util.Date;
 
-/**
- * 财务审核
- * @author zph2
- */
 public class Verify {
-    /**
-     * id
-     */
     private Integer id;
-    /**
-     *审核人
-     */
+
     private String verifier;
-    /**
-     *审核时间
-     */
+
     private Date time;
-    /**
-     *审核状态(1 财务审核 2 出库审核)
-     */
+
     private Integer state;
 
     public Integer getId() {
